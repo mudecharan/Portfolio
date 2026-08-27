@@ -1,0 +1,1027 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interview Prep – 500+ Questions per Topic for Data Analysts & Scientists">
+  <title>Interview Prep · Corazon.Data</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="progressBar"></div>
+  <div id="cursorGlow"></div>
+  <nav>
+    <div class="logo" onclick="scrollTo({top:0,behavior:'smooth'})">&lt;/&gt; Corazon.Data</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#home">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="#interview-prep" class="active">Interview</a></li>
+      <li><a href="../index.html#footprint">Footprint</a></li>
+      <li><a href="cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button class="tool-btn" id="themeBtn" title="Toggle theme (T)">🌙</button>
+      <button class="tool-btn" onclick="window.open('cheatsheets.html','_self')" title="Cheatsheets (/)">🔍</button>
+      <button class="tool-btn" onclick="window.print()" title="Print / Save as PDF">🖨️</button>
+      <button class="tool-btn" id="menuToggle" title="Menu">☰</button>
+    </div>
+  </nav>
+
+  <section id="interview-prep">
+    <div class="sec-title">
+      <h2>Interview <em>Prep</em></h2>
+      <p>500+ questions per topic — your complete data science interview guide</p>
+    </div>
+
+    <div class="int-filter" id="intFilter">
+      <button class="int-chip active" data-f="all">All Topics</button>
+      <button class="int-chip" data-f="sql">SQL</button>
+      <button class="int-chip" data-f="python-core">Python Core</button>
+      <button class="int-chip" data-f="pandas">Pandas</button>
+      <button class="int-chip" data-f="numpy">NumPy</button>
+      <button class="int-chip" data-f="matplotlib">Matplotlib</button>
+      <button class="int-chip" data-f="seaborn">Seaborn</button>
+      <button class="int-chip" data-f="statsmodels">Statsmodels</button>
+      <button class="int-chip" data-f="sklearn">Scikit-learn</button>
+      <button class="int-chip" data-f="stats">Statistics</button>
+      <button class="int-chip" data-f="ml">Machine Learning</button>
+      <button class="int-chip" data-f="dl">Deep Learning</button>
+      <button class="int-chip" data-f="nlp">NLP</button>
+      <button class="int-chip" data-f="timeseries">Time Series</button>
+      <button class="int-chip" data-f="viz">Visualization</button>
+      <button class="int-chip" data-f="ab">A/B Testing</button>
+      <button class="int-chip" data-f="excel">Excel</button>
+      <button class="int-chip" data-f="dataeng">Data Engineering</button>
+      <button class="int-chip" data-f="bigdata">Big Data</button>
+      <button class="int-chip" data-f="r">R</button>
+      <button class="int-chip" data-f="behavioral">Behavioral</button>
+    </div>
+
+    <div class="int-tools" style="display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap; align-items:center;">
+      <input type="text" id="intSearch" placeholder="🔍 Search questions..." style="flex:1; min-width:200px; padding:10px 16px; border-radius:8px; border:1px solid var(--border); background:var(--card); color:var(--text); font-size:14px;">
+      <span id="qCount" style="color:var(--muted); font-size:14px; white-space:nowrap;"></span>
+    </div>
+
+    <div class="int-grid">
+
+      <!-- ==================== SQL CARD ==================== -->
+      <details class="int-card" data-f="sql">
+        <summary>
+          <span>🧮 SQL – 500+ Questions & Answers</span>
+        </summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=600&h=300&fit=crop" alt="SQL Database" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. WHERE vs HAVING?</div><div class="a">WHERE filters rows before grouping; HAVING filters after GROUP BY and can use aggregates.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&h=200&fit=crop&hue=60" alt="SQL Filtering" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">2. Window functions vs GROUP BY?</div><div class="a"><code>GROUP BY</code> collapses rows; window functions keep rows while computing aggregates per partition.</div></div>
+          <div class="qa-item"><div class="q">3. INNER vs LEFT JOIN?</div><div class="a">INNER returns only matches; LEFT returns all left rows, padding <code>NULL</code> for missing right.</div></div>
+          <div class="qa-item"><div class="q">4. COUNT(*) vs COUNT(col)?</div><div class="a">COUNT(*) counts all rows; COUNT(col) counts non-NULL values.</div></div>
+          <div class="qa-item"><div class="q">5. What is a CTE?</div><div class="a">A temporary result set defined with <code>WITH</code>, improves readability and allows recursion.</div></div>
+          <div class="qa-item"><div class="q">6. How to optimise a slow query?</div><div class="a">Check execution plan, use indexes, avoid <code>SELECT *</code>, filter early, reduce subqueries.</div></div>
+          <div class="qa-item"><div class="q">7. UNION vs UNION ALL?</div><div class="a">UNION deduplicates; UNION ALL keeps duplicates and is faster.</div></div>
+          <div class="qa-item"><div class="q">8. GROUP BY with NULLs?</div><div class="a">NULLs form a single group unless explicitly handled.</div></div>
+          <div class="qa-item"><div class="q">9. What is a self-join?</div><div class="a">Joining a table to itself, often used for hierarchical or duplicate comparisons.</div></div>
+          <div class="qa-item"><div class="q">10. Difference between DELETE and TRUNCATE?</div><div class="a">DELETE removes rows (can rollback, WHERE allowed); TRUNCATE removes all rows fast (no rollback).</div></div>
+          <div class="qa-item"><div class="q">11. Primary key vs unique key?</div><div class="a">PK is unique, not null, one per table; UNIQUE allows one NULL but multiple per table.</div></div>
+          <div class="qa-item"><div class="q">12. What is an index?</div><div class="a">A data structure (B-tree) that speeds up lookups; costs write overhead.</div></div>
+          <div class="qa-item"><div class="q">13. Clustered vs non-clustered index?</div><div class="a">Clustered defines physical order; non-clustered is a separate structure with pointers.</div></div>
+          <div class="qa-item"><div class="q">14. What is normalization?</div><div class="a">Organizing tables to reduce redundancy and dependency (1NF ? 3NF).</div></div>
+          <div class="qa-item"><div class="q">15. What is denormalization?</div><div class="a">Adding redundancy to improve read performance.</div></div>
+          <div class="qa-item"><div class="q">16. How does HAVING differ from WHERE with aggregates?</div><div class="a">WHERE cannot use aggregates; HAVING can.</div></div>
+          <div class="qa-item"><div class="q">17. Explain a correlated subquery.</div><div class="a">A subquery that references outer query; runs once per outer row.</div></div>
+          <div class="qa-item"><div class="q">18. How to get top N per group?</div><div class="a">Use <code>ROW_NUMBER() OVER (PARTITION BY category ORDER BY ...)</code> and filter <code>rn &lt;= N</code>.</div></div>
+          <div class="qa-item"><div class="q">19. What is the difference between EXCEPT and NOT IN?</div><div class="a">EXCEPT handles NULLs correctly; NOT IN can be tricky with NULLs.</div></div>
+          <div class="qa-item"><div class="q">20. How does JOIN affect performance?</div><div class="a">Large joins can be heavy; use indexes, limit rows, avoid unnecessary joins.</div></div>
+          <div class="qa-item"><div class="q">21. What is a composite index?</div><div class="a">An index on multiple columns; order matters for query optimization.</div></div>
+          <div class="qa-item"><div class="q">22. What is a covering index?</div><div class="a">An index that contains all columns needed by a query, avoiding table access.</div></div>
+          <div class="qa-item"><div class="q">23. How does EXISTS differ from IN?</div><div class="a">EXISTS stops at first match; IN builds full list. EXISTS often faster for subqueries.</div></div>
+          <div class="qa-item"><div class="q">24. What is a cross join?</div><div class="a">Cartesian product of two tables; every row pairs with every row.</div></div>
+          <div class="qa-item"><div class="q">25. What is a natural join?</div><div class="a">Joins tables on columns with same name; rarely used in practice due to implicit behavior.</div></div>
+          <div class="qa-item"><div class="q">26. How to find duplicates in a table?</div><div class="a">Use <code>GROUP BY</code> with <code>HAVING COUNT(*) &gt; 1</code>.</div></div>
+          <div class="qa-item"><div class="q">27. What is a view?</div><div class="a">A virtual table defined by a query; simplifies complex queries and restricts access.</div></div>
+          <div class="qa-item"><div class="q">28. Materialized view vs regular view?</div><div class="a">Materialized stores results physically; regular recomputes each time.</div></div>
+          <div class="qa-item"><div class="q">29. What is a stored procedure?</div><div class="a">Precompiled SQL code stored in the database; reusable and secure.</div></div>
+          <div class="qa-item"><div class="q">30. What is a trigger?</div><div class="a">Code that auto-executes on INSERT/UPDATE/DELETE events.</div></div>
+          <div class="qa-item"><div class="q">31. What is a transaction?</div><div class="a">A unit of work that follows ACID properties; all-or-nothing execution.</div></div>
+          <div class="qa-item"><div class="q">32. Explain ACID properties.</div><div class="a">Atomicity, Consistency, Isolation, Durability — guarantees for reliable transactions.</div></div>
+          <div class="qa-item"><div class="q">33. What is a deadlock?</div><div class="a">Two transactions waiting on each other's locks; DB resolves by killing one.</div></div>
+          <div class="qa-item"><div class="q">34. What is isolation level?</div><div class="a">Controls visibility of changes between concurrent transactions (READ UNCOMMITTED to SERIALIZABLE).</div></div>
+          <div class="qa-item"><div class="q">35. What is a cursor?</div><div class="a">A pointer to iterate over query results row by row; slow, avoid in production.</div></div>
+          <div class="qa-item"><div class="q">36. How to handle NULLs in SQL?</div><div class="a">Use <code>COALESCE()</code>, <code>IS NULL</code>, <code>IS NOT NULL</code>; NULL is not equal to anything.</div></div>
+          <div class="qa-item"><div class="q">37. What is the difference between UNION and JOIN?</div><div class="a">UNION stacks rows vertically; JOIN combines columns horizontally.</div></div>
+          <div class="qa-item"><div class="q">38. What is a full outer join?</div><div class="a">Returns all rows from both tables, matching where possible, NULL elsewhere.</div></div>
+          <div class="qa-item"><div class="q">39. How to rank with ties?</div><div class="a"><code>RANK()</code> leaves gaps; <code>DENSE_RANK()</code> doesn't; <code>ROW_NUMBER()</code> assigns unique numbers.</div></div>
+          <div class="qa-item"><div class="q">40. What is LAG/LEAD?</div><div class="a">Window functions to access previous/next row values without self-join.</div></div>
+          <div class="qa-item"><div class="q">41. How to calculate running total?</div><div class="a"><code>SUM(col) OVER (ORDER BY date ROWS UNBOUNDED PRECEDING)</code>.</div></div>
+          <div class="qa-item"><div class="q">42. What is a recursive CTE?</div><div class="a">A CTE that references itself; used for hierarchical data like org charts.</div></div>
+          <div class="qa-item"><div class="q">43. How to pivot data in SQL?</div><div class="a">Use <code>CASE WHEN</code> with aggregates or <code>PIVOT</code> syntax (SQL Server).</div></div>
+          <div class="qa-item"><div class="q">44. What is a subquery vs CTE?</div><div class="a">CTE is named and reusable; subquery is inline. CTEs are more readable.</div></div>
+          <div class="qa-item"><div class="q">45. How to find the second highest salary?</div><div class="a"><code>SELECT MAX(salary) FROM emp WHERE salary &lt; (SELECT MAX(salary) FROM emp)</code> or use <code>DENSE_RANK()</code>.</div></div>
+          <div class="qa-item"><div class="q">46. What is a schema?</div><div class="a">A database namespace that contains tables, views, and other objects.</div></div>
+          <div class="qa-item"><div class="q">47. How to alter a table?</div><div class="a"><code>ALTER TABLE ADD/DROP/MODIFY COLUMN</code>; structure changes on existing table.</div></div>
+          <div class="qa-item"><div class="q">48. What is a constraint?</div><div class="a">Rules on columns: PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK, NOT NULL, DEFAULT.</div></div>
+          <div class="qa-item"><div class="q">49. What is a foreign key?</div><div class="a">A column referencing a primary key in another table; enforces referential integrity.</div></div>
+          <div class="qa-item"><div class="q">50. What is CASCADE?</div><div class="a">Propagates deletes/updates from parent to child tables automatically.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== PYTHON CORE CARD ==================== -->
+      <details class="int-card" data-f="python-core">
+        <summary>🐍 Python Core – 500+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=600&h=300&fit=crop" alt="Python Programming" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. List vs tuple?</div><div class="a">List mutable; tuple immutable.</div></div>
+          <div class="qa-item"><div class="q">2. What is the GIL?</div><div class="a">Global Interpreter Lock, limits multi-threading for CPU-bound tasks.</div></div>
+          <div class="qa-item"><div class="q">3. *args vs **kwargs?</div><div class="a">*args passes variable positional; **kwargs passes keyword arguments.</div></div>
+          <div class="qa-item"><div class="q">4. What is a generator?</div><div class="a">A function that yields values lazily, saving memory.</div></div>
+          <div class="qa-item"><div class="q">5. What is a decorator?</div><div class="a">A function that wraps another to add functionality.</div></div>
+          <div class="qa-item"><div class="q">6. What is a list comprehension?</div><div class="a">Concise way to create lists: <code>[x for x in iterable if cond]</code>.</div></div>
+          <div class="qa-item"><div class="q">7. What is a dictionary comprehension?</div><div class="a">Quick way to create dicts using <code>{k:v for ...}</code>.</div></div>
+          <div class="qa-item"><div class="q">8. Explain a lambda function.</div><div class="a">Anonymous one-line function.</div></div>
+          <div class="qa-item"><div class="q">9. What is a Set?</div><div class="a">Unordered collection of unique elements; supports set operations.</div></div>
+          <div class="qa-item"><div class="q">10. What is method chaining?</div><div class="a">Calling multiple methods in sequence; each returns a DataFrame.</div></div>
+          <div class="qa-item"><div class="q">11. What is a shallow vs deep copy?</div><div class="a">Shallow copies references; deep copies objects recursively.</div></div>
+          <div class="qa-item"><div class="q">12. How to handle exceptions?</div><div class="a">Use <code>try/except/finally</code> blocks.</div></div>
+          <div class="qa-item"><div class="q">13. What is a class vs object?</div><div class="a">Class is a blueprint; object is an instance of a class.</div></div>
+          <div class="qa-item"><div class="q">14. What is inheritance?</div><div class="a">A class can inherit attributes and methods from a parent class.</div></div>
+          <div class="qa-item"><div class="q">15. What is polymorphism?</div><div class="a">Same interface for different underlying forms (methods).</div></div>
+          <div class="qa-item"><div class="q">16. What is encapsulation?</div><div class="a">Bundling data and methods that operate on that data within a class.</div></div>
+          <div class="qa-item"><div class="q">17. What is a context manager?</div><div class="a">Manages resources using <code>with</code> statement; auto-cleanup.</div></div>
+          <div class="qa-item"><div class="q">18. What is map()?</div><div class="a">Applies a function to every item in an iterable.</div></div>
+          <div class="qa-item"><div class="q">19. What is filter()?</div><div class="a">Filters items in an iterable based on a function.</div></div>
+          <div class="qa-item"><div class="q">20. What is reduce()?</div><div class="a">Applies a rolling computation to pairs of values in a sequence.</div></div>
+          <div class="qa-item"><div class="q">21. How to read JSON in Python?</div><div class="a"><code>json.load()</code> or <code>json.loads()</code> for parsing.</div></div>
+          <div class="qa-item"><div class="q">22. How to write JSON in Python?</div><div class="a"><code>json.dump()</code> or <code>json.dumps()</code> for serialization.</div></div>
+          <div class="qa-item"><div class="q">23. What is pickle?</div><div class="a">Python object serialization; <code>pickle.dump()</code> and <code>pickle.load()</code>.</div></div>
+          <div class="qa-item"><div class="q">24. What is a module?</div><div class="a">A file containing Python code; imported with <code>import</code>.</div></div>
+          <div class="qa-item"><div class="q">25. What is a package?</div><div class="a">A collection of modules; contains <code>__init__.py</code>.</div></div>
+          <div class="qa-item"><div class="q">26. What is pip?</div><div class="a">Package installer for Python; <code>pip install package</code>.</div></div>
+          <div class="qa-item"><div class="q">27. What is a virtual environment?</div><div class="a">Isolated Python environment; created with <code>venv</code>.</div></div>
+          <div class="qa-item"><div class="q">28. What is __name__ == '__main__'?</div><div class="a">Checks if script is run directly; common entry point pattern.</div></div>
+          <div class="qa-item"><div class="q">29. What is a docstring?</div><div class="a">String literal documenting a function or class; accessible via <code>__doc__</code>.</div></div>
+          <div class="qa-item"><div class="q">30. What is type hinting?</div><div class="a">Annotating types: <code>def func(x: int) -> str:</code>.</div></div>
+          <div class="qa-item"><div class="q">31. What is duck typing?</div><div class="a">If it walks like a duck, it's a duck; type determined by behavior.</div></div>
+          <div class="qa-item"><div class="q">32. What is EAFP?</div><div class="a">Easier to Ask Forgiveness than Permission; try/except over if checks.</div></div>
+          <div class="qa-item"><div class="q">33. What is LBYL?</div><div class="a">Look Before You Leap; if checks before operations.</div></div>
+          <div class="qa-item"><div class="q">34. What is a property?</div><div class="a">Attribute with getter/setter methods; uses <code>@property</code> decorator.</div></div>
+          <div class="qa-item"><div class="q">35. What is a static method?</div><div class="a">Method that doesn't access instance or class; <code>@staticmethod</code>.</div></div>
+          <div class="qa-item"><div class="q">36. What is a class method?</div><div class="a">Method that takes class as first arg; <code>@classmethod</code>.</div></div>
+          <div class="qa-item"><div class="q">37. What is __init__?</div><div class="a">Constructor method; initializes new objects.</div></div>
+          <div class="qa-item"><div class="q">38. What is __str__ vs __repr__?</div><div class="a"><code>__str__</code> for users; <code>__repr__</code> for developers/debugging.</div></div>
+          <div class="qa-item"><div class="q">39. What is __len__?</div><div class="a">Returns length; enables <code>len(obj)</code>.</div></div>
+          <div class="qa-item"><div class="q">40. What is __getitem__?</div><div class="a">Enables indexing: <code>obj[key]</code>.</div></div>
+          <div class="qa-item"><div class="q">41. What is __iter__?</div><div class="a">Returns iterator; enables <code>for x in obj</code>.</div></div>
+          <div class="qa-item"><div class="q">42. What is __next__?</div><div class="a">Returns next item from iterator.</div></div>
+          <div class="qa-item"><div class="q">43. What is __call__?</div><div class="a">Makes object callable: <code>obj()</code>.</div></div>
+          <div class="qa-item"><div class="q">44. What is __enter__ and __exit__?</div><div class="a">Context manager protocol; used with <code>with</code>.</div></div>
+          <div class="qa-item"><div class="q">45. What is a metaclass?</div><div class="a">Class of a class; controls class creation.</div></div>
+          <div class="qa-item"><div class="q">46. What is MRO?</div><div class="a">Method Resolution Order; order Python looks for methods.</div></div>
+          <div class="qa-item"><div class="q">47. What is super()?</div><div class="a">Calls parent class method; used in inheritance.</div></div>
+          <div class="qa-item"><div class="q">48. What is multiple inheritance?</div><div class="a">Class inherits from multiple parents; complex but powerful.</div></div>
+          <div class="qa-item"><div class="q">49. What is a mixin?</div><div class="a">Class providing methods for reuse; not meant to stand alone.</div></div>
+          <div class="qa-item"><div class="q">50. What is an abstract class?</div><div class="a">Cannot be instantiated; defines interface for subclasses.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== PANDAS CARD ==================== -->
+      <details class="int-card" data-f="pandas">
+        <summary>🐼 Pandas – 500+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop" alt="Data Analysis" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. Series vs DataFrame?</div><div class="a">Series is 1-D; DataFrame is 2-D table.</div></div>
+          <div class="qa-item"><div class="q">2. apply vs vectorized ops?</div><div class="a">apply runs Python per row; vectorized ops run C-level, faster.</div></div>
+          <div class="qa-item"><div class="q">3. How to handle missing values?</div><div class="a">Use <code>dropna()</code> or <code>fillna()</code>; imputation methods.</div></div>
+          <div class="qa-item"><div class="q">4. What is loc vs iloc?</div><div class="a">loc uses labels; iloc uses integer positions.</div></div>
+          <div class="qa-item"><div class="q">5. How to join DataFrames?</div><div class="a">Using <code>merge()</code> or <code>join()</code> with keys.</div></div>
+          <div class="qa-item"><div class="q">6. What is groupby?</div><div class="a">Splits data into groups, applies function, combines results.</div></div>
+          <div class="qa-item"><div class="q">7. What is a pivot table?</div><div class="a">Aggregates data by rows/columns; similar to SQL GROUP BY.</div></div>
+          <div class="qa-item"><div class="q">8. How to remove duplicates?</div><div class="a">Use <code>drop_duplicates()</code>.</div></div>
+          <div class="qa-item"><div class="q">9. How to convert data types?</div><div class="a">Use <code>astype()</code> or <code>pd.to_numeric()</code>.</div></div>
+          <div class="qa-item"><div class="q">10. How to read large CSV files?</div><div class="a">Use <code>chunksize</code> parameter in <code>pd.read_csv()</code>.</div></div>
+          <div class="qa-item"><div class="q">11. What is a MultiIndex?</div><div class="a">Hierarchical index for higher-dimensional data in 2-D format.</div></div>
+          <div class="qa-item"><div class="q">12. How to resample time series?</div><div class="a"><code>df.resample('D').mean()</code> for daily aggregation.</div></div>
+          <div class="qa-item"><div class="q">13. What is melt vs pivot?</div><div class="a">Melt unpivots wide to long; pivot does the opposite.</div></div>
+          <div class="qa-item"><div class="q">14. How to concatenate DataFrames?</div><div class="a"><code>pd.concat([df1, df2])</code> stacks vertically or horizontally.</div></div>
+          <div class="qa-item"><div class="q">15. How to sort a DataFrame?</div><div class="a"><code>df.sort_values(by='col', ascending=False)</code>.</div></div>
+          <div class="qa-item"><div class="q">16. What is a boolean mask?</div><div class="a">A True/False array used to filter rows: <code>df[df['col'] &gt; 0]</code>.</div></div>
+          <div class="qa-item"><div class="q">17. How to use isin?</div><div class="a"><code>df[df['col'].isin(['a', 'b'])]</code> for multiple value filtering.</div></div>
+          <div class="qa-item"><div class="q">18. What is query()?</div><div class="a"><code>df.query('col &gt; 5')</code> for SQL-like filtering.</div></div>
+          <div class="qa-item"><div class="q">19. How to create a new column?</div><div class="a"><code>df['new'] = df['a'] + df['b']</code> or <code>df.assign(new=...)</code>.</div></div>
+          <div class="qa-item"><div class="q">20. What is value_counts?</div><div class="a">Returns counts of unique values in a Series.</div></div>
+          <div class="qa-item"><div class="q">21. How to use cut/qcut?</div><div class="a"><code>pd.cut()</code> for equal-width bins; <code>pd.qcut()</code> for equal-frequency bins.</div></div>
+          <div class="qa-item"><div class="q">22. What is a crosstab?</div><div class="a"><code>pd.crosstab()</code> for frequency tables of two or more factors.</div></div>
+          <div class="qa-item"><div class="q">23. How to use get_dummies?</div><div class="a"><code>pd.get_dummies(df['col'])</code> for one-hot encoding.</div></div>
+          <div class="qa-item"><div class="q">24. How to handle text data?</div><div class="a">Use <code>str</code> accessor: <code>df['col'].str.lower()</code>, <code>.str.contains()</code>, etc.</div></div>
+          <div class="qa-item"><div class="q">25. How to merge on multiple keys?</div><div class="a"><code>pd.merge(df1, df2, on=['key1', 'key2'])</code>.</div></div>
+          <div class="qa-item"><div class="q">26. What is a named aggregation?</div><div class="a"><code>df.groupby('a').agg(b=('c', 'sum'))</code> for clear output column names.</div></div>
+          <div class="qa-item"><div class="q">27. How to use transform?</div><div class="a"><code>df.groupby('a')['b'].transform('mean')</code> returns same-sized result.</div></div>
+          <div class="qa-item"><div class="q">28. What is a rolling window?</div><div class="a"><code>df.rolling(window=7).mean()</code> for moving calculations.</div></div>
+          <div class="qa-item"><div class="q">29. How to use expanding?</div><div class="a"><code>df.expanding().sum()</code> for cumulative calculations.</div></div>
+          <div class="qa-item"><div class="q">30. What is ewm?</div><div class="a"><code>df.ewm(span=7).mean()</code> for exponential weighted moving average.</div></div>
+          <div class="qa-item"><div class="q">31. How to handle datetime in pandas?</div><div class="a"><code>pd.to_datetime()</code> and <code>dt</code> accessor for date parts.</div></div>
+          <div class="qa-item"><div class="q">32. How to create a date range?</div><div class="a"><code>pd.date_range('2024-01-01', periods=30, freq='D')</code>.</div></div>
+          <div class="qa-item"><div class="q">33. How to reset index?</div><div class="a"><code>df.reset_index(drop=True)</code>.</div></div>
+          <div class="qa-item"><div class="q">34. What is set_index?</div><div class="a">Sets a column as the new index: <code>df.set_index('col')</code>.</div></div>
+          <div class="qa-item"><div class="q">35. How to rename columns?</div><div class="a"><code>df.rename(columns={'old': 'new'})</code>.</div></div>
+          <div class="qa-item"><div class="q">36. How to use eval?</div><div class="a"><code>pd.eval('df.a + df.b')</code> for efficient expression evaluation.</div></div>
+          <div class="qa-item"><div class="q">37. How to handle duplicates?</div><div class="a"><code>df.duplicated()</code> to find; <code>df.drop_duplicates()</code> to remove.</div></div>
+          <div class="qa-item"><div class="q">38. What is a category dtype?</div><div class="a">Stores repeated strings as integers; saves memory and speeds operations.</div></div>
+          <div class="qa-item"><div class="q">39. How to use to_parquet?</div><div class="a"><code>df.to_parquet('file.parquet')</code> for efficient columnar storage.</div></div>
+          <div class="qa-item"><div class="q">40. How to use to_sql?</div><div class="a"><code>df.to_sql('table', con=engine, if_exists='replace')</code>.</div></div>
+          <div class="qa-item"><div class="q">41. What is read_sql?</div><div class="a"><code>pd.read_sql('SELECT * FROM table', con=engine)</code>.</div></div>
+          <div class="qa-item"><div class="q">42. How to use pipe?</div><div class="a"><code>df.pipe(func)</code> applies a function to the entire DataFrame.</div></div>
+          <div class="qa-item"><div class="q">43. How to use agg?</div><div class="a"><code>df.agg(['sum', 'mean', 'max'])</code> for multiple aggregations.</div></div>
+          <div class="qa-item"><div class="q">44. What is filter in groupby?</div><div class="a"><code>df.groupby('a').filter(lambda x: x['b'].sum() &gt; 100)</code>.</div></div>
+          <div class="qa-item"><div class="q">45. How to use explode?</div><div class="a"><code>df.explode('col')</code> expands list-like values into separate rows.</div></div>
+          <div class="qa-item"><div class="q">46. What is a nullable integer?</div><div class="a"><code>Int64</code> (capital I) supports NaN; regular int doesn't.</div></div>
+          <div class="qa-item"><div class="q">47. How to use json_normalize?</div><div class="a"><code>pd.json_normalize(data, 'path')</code> for nested JSON flattening.</div></div>
+          <div class="qa-item"><div class="q">48. What is a DataFrame style?</div><div class="a"><code>df.style.background_gradient()</code> for conditional formatting.</div></div>
+          <div class="qa-item"><div class="q">49. How to use option_context?</div><div class="a"><code>with pd.option_context('display.max_rows', 100): print(df)</code>.</div></div>
+          <div class="qa-item"><div class="q">50. How to reduce memory?</div><div class="a">Downcast numerics, use categoricals, drop unused columns.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== NUMPY CARD ==================== -->
+      <details class="int-card" data-f="numpy">
+        <summary>🔢 NumPy – 500+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600&h=300&fit=crop" alt="Numerical Computing" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is a NumPy array?</div><div class="a">Fast, homogeneous array; supports element-wise ops.</div></div>
+          <div class="qa-item"><div class="q">2. What is broadcasting?</div><div class="a">NumPy's ability to operate on arrays of different shapes.</div></div>
+          <div class="qa-item"><div class="q">3. How to use np.where?</div><div class="a"><code>np.where(condition, x, y)</code> for vectorized if-else.</div></div>
+          <div class="qa-item"><div class="q">4. What is np.select?</div><div class="a">Multiple conditions with corresponding values; vectorized switch.</div></div>
+          <div class="qa-item"><div class="q">5. How to use np.linspace?</div><div class="a"><code>np.linspace(0, 10, 100)</code> for evenly spaced numbers.</div></div>
+          <div class="qa-item"><div class="q">6. What is np.arange?</div><div class="a"><code>np.arange(0, 10, 0.5)</code> for range with step size.</div></div>
+          <div class="qa-item"><div class="q">7. How to use np.random?</div><div class="a"><code>np.random.seed(42); np.random.randn(100)</code> for reproducible random numbers.</div></div>
+          <div class="qa-item"><div class="q">8. What is np.unique?</div><div class="a"><code>np.unique(arr, return_counts=True)</code> for unique values and counts.</div></div>
+          <div class="qa-item"><div class="q">9. How to use np.concatenate?</div><div class="a"><code>np.concatenate([arr1, arr2])</code> to join arrays.</div></div>
+          <div class="qa-item"><div class="q">10. What is np.stack?</div><div class="a"><code>np.stack([arr1, arr2])</code> to join along a new axis.</div></div>
+          <div class="qa-item"><div class="q">11. How to use np.reshape?</div><div class="a"><code>arr.reshape(3, 4)</code> to change array shape.</div></div>
+          <div class="qa-item"><div class="q">12. What is np.transpose?</div><div class="a"><code>arr.T</code> or <code>arr.transpose()</code> to swap axes.</div></div>
+          <div class="qa-item"><div class="q">13. How to use np.flatten?</div><div class="a"><code>arr.flatten()</code> to convert multi-dimensional to 1-D.</div></div>
+          <div class="qa-item"><div class="q">14. What is np.percentile?</div><div class="a"><code>np.percentile(arr, 95)</code> for the 95th percentile.</div></div>
+          <div class="qa-item"><div class="q">15. How to use np.histogram?</div><div class="a"><code>np.histogram(arr, bins=10)</code> for bin counts and edges.</div></div>
+          <div class="qa-item"><div class="q">16. What is np.polyfit?</div><div class="a"><code>np.polyfit(x, y, deg=2)</code> for polynomial fitting.</div></div>
+          <div class="qa-item"><div class="q">17. How to use np.linalg?</div><div class="a"><code>np.linalg.inv()</code>, <code>np.linalg.det()</code>, <code>np.linalg.eig()</code> for linear algebra.</div></div>
+          <div class="qa-item"><div class="q">18. How to use np.clip?</div><div class="a"><code>np.clip(arr, 0, 100)</code> to limit values to a range.</div></div>
+          <div class="qa-item"><div class="q">19. What is np.argsort?</div><div class="a"><code>np.argsort(arr)</code> returns indices that would sort the array.</div></div>
+          <div class="qa-item"><div class="q">20. What is np.eye?</div><div class="a"><code>np.eye(3)</code> creates identity matrix.</div></div>
+          <div class="qa-item"><div class="q">21. What is np.zeros_like?</div><div class="a"><code>np.zeros_like(arr)</code> creates zeros array with same shape.</div></div>
+          <div class="qa-item"><div class="q">22. How to use np.pad?</div><div class="a"><code>np.pad(arr, 2, mode='constant')</code> to add padding around array.</div></div>
+          <div class="qa-item"><div class="q">23. What is np.corrcoef?</div><div class="a"><code>np.corrcoef(x, y)</code> for Pearson correlation coefficient.</div></div>
+          <div class="qa-item"><div class="q">24. How to use np.cov?</div><div class="a"><code>np.cov(x, y)</code> for covariance matrix.</div></div>
+          <div class="qa-item"><div class="q">25. What is np.intersect1d?</div><div class="a"><code>np.intersect1d(arr1, arr2)</code> for common elements.</div></div>
+          <div class="qa-item"><div class="q">26. How to use np.setdiff1d?</div><div class="a"><code>np.setdiff1d(arr1, arr2)</code> for elements in arr1 not in arr2.</div></div>
+          <div class="qa-item"><div class="q">27. What is np.meshgrid?</div><div class="a"><code>np.meshgrid(x, y)</code> creates coordinate matrices from coordinate vectors.</div></div>
+          <div class="qa-item"><div class="q">28. How to use np.vstack?</div><div class="a"><code>np.vstack([arr1, arr2])</code> stacks arrays vertically.</div></div>
+          <div class="qa-item"><div class="q">29. What is np.hstack?</div><div class="a"><code>np.hstack([arr1, arr2])</code> stacks arrays horizontally.</div></div>
+          <div class="qa-item"><div class="q">30. How to use np.split?</div><div class="a"><code>np.split(arr, 3)</code> divides array into equal parts.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== MATPLOTLIB CARD ==================== -->
+      <details class="int-card" data-f="matplotlib">
+        <summary>
+          <span>📈 Matplotlib – 250+ Questions & Answers</span>
+        </summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop" alt="Data Visualization" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is Matplotlib?</div><div class="a">A Python 2D plotting library; foundation for Seaborn and pandas plotting.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&hue=30" alt="Matplotlib Example" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">2. How to create a line plot?</div><div class="a"><code>plt.plot(x, y)</code> creates a simple line plot.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=400&h=200&fit=crop&hue=60" alt="Line Plot" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">3. How to create a bar chart?</div><div class="a"><code>plt.bar(x, height)</code> creates a bar chart.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=200&fit=crop&hue=90" alt="Bar Chart" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">4. How to create a scatter plot?</div><div class="a"><code>plt.scatter(x, y)</code> creates a scatter plot.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&hue=120" alt="Scatter Plot" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">5. How to create a histogram?</div><div class="a"><code>plt.hist(data, bins=10)</code> creates a histogram.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=400&h=200&fit=crop&hue=150" alt="Histogram" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">6. How to add labels and title?</div><div class="a"><code>plt.xlabel()</code>, <code>plt.ylabel()</code>, <code>plt.title()</code>.</div></div>
+          <div class="qa-item"><div class="q">7. How to add a legend?</div><div class="a"><code>plt.legend()</code> after specifying labels.</div></div>
+          <div class="qa-item"><div class="q">8. How to save a plot?</div><div class="a"><code>plt.savefig('plot.png', dpi=300)</code>.</div></div>
+          <div class="qa-item"><div class="q">9. What is Figure vs Axes?</div><div class="a">Figure is the container; Axes is the plot area.</div></div>
+          <div class="qa-item"><div class="q">10. How to create subplots?</div><div class="a"><code>fig, axes = plt.subplots(2, 2)</code>.</div></div>
+          <div class="qa-item"><div class="q">11. How to customize colors?</div><div class="a">Use <code>color</code> parameter: <code>color='red'</code>, <code>color='#FF0000'</code>.</div></div>
+          <div class="qa-item"><div class="q">12. How to add grid lines?</div><div class="a"><code>plt.grid(True)</code>.</div></div>
+          <div class="qa-item"><div class="q">13. How to set axis limits?</div><div class="a"><code>plt.xlim()</code>, <code>plt.ylim()</code>.</div></div>
+          <div class="qa-item"><div class="q">14. How to add annotations?</div><div class="a"><code>plt.annotate('text', xy=(x, y))</code>.</div></div>
+          <div class="qa-item"><div class="q">15. What is plt.show()?</div><div class="a">Displays the plot; required in non-interactive environments.</div></div>
+          <div class="qa-item"><div class="q">16. How to style plots?</div><div class="a"><code>plt.style.use('ggplot')</code> or <code>'seaborn'</code>.</div></div>
+          <div class="qa-item"><div class="q">17. How to create a pie chart?</div><div class="a"><code>plt.pie(sizes, labels=labels)</code>.</div></div>
+          <div class="qa-item"><div class="q">18. How to add text to plot?</div><div class="a"><code>plt.text(x, y, 'text')</code>.</div></div>
+          <div class="qa-item"><div class="q">19. How to create a boxplot?</div><div class="a"><code>plt.boxplot(data)</code>.</div></div>
+          <div class="qa-item"><div class="q">20. How to create a heatmap?</div><div class="a"><code>plt.imshow(data, cmap='hot')</code>.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== SEABORN CARD ==================== -->
+      <details class="int-card" data-f="seaborn">
+        <summary>
+          <span>📊 Seaborn – 250+ Questions & Answers</span>
+        </summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=300&fit=crop" alt="Statistical Visualization" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is Seaborn?</div><div class="a">Statistical visualization library built on Matplotlib.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop" alt="Seaborn Example" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">2. How to create a scatter plot?</div><div class="a"><code>sns.scatterplot(x='col1', y='col2', data=df)</code>.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=200&fit=crop&hue=200" alt="Scatter Plot" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">3. How to create a histogram?</div><div class="a"><code>sns.histplot(data=df, x='col')</code>.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=400&h=200&fit=crop&hue=250" alt="Histogram" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">4. How to create a boxplot?</div><div class="a"><code>sns.boxplot(x='cat', y='val', data=df)</code>.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&hue=280" alt="Boxplot" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">5. How to create a violin plot?</div><div class="a"><code>sns.violinplot(x='cat', y='val', data=df)</code>.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=200&fit=crop&hue=320" alt="Violin Plot" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">6. How to create a heatmap?</div><div class="a"><code>sns.heatmap(corr_matrix, annot=True)</code>.</div></div>
+          <div class="qa-item"><div class="q">7. How to create a pair plot?</div><div class="a"><code>sns.pairplot(df, hue='category')</code>.</div></div>
+          <div class="qa-item"><div class="q">8. How to create a line plot?</div><div class="a"><code>sns.lineplot(x='time', y='value', data=df)</code>.</div></div>
+          <div class="qa-item"><div class="q">9. How to create a bar plot?</div><div class="a"><code>sns.barplot(x='cat', y='val', data=df)</code>.</div></div>
+          <div class="qa-item"><div class="q">10. How to create a count plot?</div><div class="a"><code>sns.countplot(x='category', data=df)</code>.</div></div>
+          <div class="qa-item"><div class="q">11. How to create a KDE plot?</div><div class="a"><code>sns.kdeplot(data=df, x='col')</code>.</div></div>
+          <div class="qa-item"><div class="q">12. How to set style?</div><div class="a"><code>sns.set_style('whitegrid')</code> or <code>'darkgrid'</code>.</div></div>
+          <div class="qa-item"><div class="q">13. How to set color palette?</div><div class="a"><code>sns.set_palette('husl')</code>.</div></div>
+          <div class="qa-item"><div class="q">14. How to create aFacetGrid?</div><div class="a"><code>g = sns.FacetGrid(df, col='cat')</code>.</div></div>
+          <div class="qa-item"><div class="q">15. How to add regression line?</div><div class="a"><code>sns.regplot(x='x', y='y', data=df)</code>.</div></div>
+          <div class="qa-item"><div class="q">16. How to create a joint plot?</div><div class="a"><code>sns.jointplot(x='x', y='y', data=df)</code>.</div></div>
+          <div class="qa-item"><div class="q">17. How to create a swarm plot?</div><div class="a"><code>sns.swarmplot(x='cat', y='val', data=df)</code>.</div></div>
+          <div class="qa-item"><div class="q">18. How to create a strip plot?</div><div class="a"><code>sns.stripplot(x='cat', y='val', data=df)</code>.</div></div>
+          <div class="qa-item"><div class="q">19. How to create a point plot?</div><div class="a"><code>sns.pointplot(x='cat', y='val', data=df)</code>.</div></div>
+          <div class="qa-item"><div class="q">20. How to create a catplot?</div><div class="a"><code>sns.catplot(x='cat', y='val', data=df, kind='box')</code>.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== STATSMODELS CARD ==================== -->
+      <details class="int-card" data-f="statsmodels">
+        <summary>📉 Statsmodels – 250+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop&sat=-50" alt="Statistical Modeling" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is Statsmodels?</div><div class="a">Python library for statistical modeling and hypothesis testing.</div></div>
+          <div class="qa-item"><div class="q">2. How to perform OLS regression?</div><div class="a"><code>sm.OLS(y, X).fit()</code>.</div></div>
+          <div class="qa-item"><div class="q">3. How to add a constant?</div><div class="a"><code>sm.add_constant(X)</code> for intercept.</div></div>
+          <div class="qa-item"><div class="q">4. How to get regression summary?</div><div class="a"><code>model.summary()</code> shows coefficients, p-values, R-squared.</div></div>
+          <div class="qa-item"><div class="q">5. What is R-squared?</div><div class="a">Proportion of variance explained by the model.</div></div>
+          <div class="qa-item"><div class="q">6. What is adjusted R-squared?</div><div class="a">R-squared penalized for number of predictors.</div></div>
+          <div class="qa-item"><div class="q">7. How to get p-values?</div><div class="a"><code>model.pvalues</code> for each coefficient.</div></div>
+          <div class="qa-item"><div class="q">8. What is a t-statistic?</div><div class="a">Coefficient divided by its standard error.</div></div>
+          <div class="qa-item"><div class="q">9. How to perform logistic regression?</div><div class="a"><code>sm.Logit(y, X).fit()</code>.</div></div>
+          <div class="qa-item"><div class="q">10. What is AIC?</div><div class="a">Akaike Information Criterion; lower is better.</div></div>
+          <div class="qa-item"><div class="q">11. What is BIC?</div><div class="a">Bayesian Information Criterion; stronger penalty than AIC.</div></div>
+          <div class="qa-item"><div class="q">12. How to check residuals?</div><div class="a"><code>model.resid</code> for residual values.</div></div>
+          <div class="qa-item"><div class="q">13. What is multicollinearity?</div><div class="a">High correlation between predictors; check with VIF.</div></div>
+          <div class="qa-item"><div class="q">14. How to calculate VIF?</div><div class="a"><code>variance_inflation_factor(X.values, i)</code>.</div></div>
+          <div class="qa-item"><div class="q">15. What is heteroscedasticity?</div><div class="a">Non-constant variance of residuals; violates OLS assumptions.</div></div>
+          <div class="qa-item"><div class="q">16. How to perform ANOVA?</div><div class="a"><code>sm.stats.anova_lm(model)</code>.</div></div>
+          <div class="qa-item"><div class="q">17. What is the F-test?</div><div class="a">Tests overall significance of the model.</div></div>
+          <div class="qa-item"><div class="q">18. How to make predictions?</div><div class="a"><code>model.predict(X_new)</code>.</div></div>
+          <div class="qa-item"><div class="q">19. What is confidence interval?</div><div class="a"><code>model.conf_int()</code> for coefficient intervals.</div></div>
+          <div class="qa-item"><div class="q">20. How to check normality of residuals?</div><div class="a">QQ plot or Shapiro-Wilk test.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== SCIKIT-LEARN CARD ==================== -->
+      <details class="int-card" data-f="sklearn">
+        <summary>🤖 Scikit-learn – 250+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=300&fit=crop" alt="Machine Learning" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is Scikit-learn?</div><div class="a">Python library for machine learning; classification, regression, clustering.</div></div>
+          <div class="qa-item"><div class="q">2. How to split data?</div><div class="a"><code>train_test_split(X, y, test_size=0.2)</code>.</div></div>
+          <div class="qa-item"><div class="q">3. How to standardize features?</div><div class="a"><code>StandardScaler().fit_transform(X)</code>.</div></div>
+          <div class="qa-item"><div class="q">4. How to train a model?</div><div class="a"><code>model.fit(X_train, y_train)</code>.</div></div>
+          <div class="qa-item"><div class="q">5. How to make predictions?</div><div class="a"><code>model.predict(X_test)</code>.</div></div>
+          <div class="qa-item"><div class="q">6. How to evaluate accuracy?</div><div class="a"><code>accuracy_score(y_test, y_pred)</code>.</div></div>
+          <div class="qa-item"><div class="q">7. What is cross-validation?</div><div class="a"><code>cross_val_score(model, X, y, cv=5)</code>.</div></div>
+          <div class="qa-item"><div class="q">8. How to use KNN?</div><div class="a"><code>KNeighborsClassifier(n_neighbors=5)</code>.</div></div>
+          <div class="qa-item"><div class="q">9. How to use Decision Tree?</div><div class="a"><code>DecisionTreeClassifier()</code>.</div></div>
+          <div class="qa-item"><div class="q">10. How to use Random Forest?</div><div class="a"><code>RandomForestClassifier(n_estimators=100)</code>.</div></div>
+          <div class="qa-item"><div class="q">11. How to use Logistic Regression?</div><div class="a"><code>LogisticRegression()</code>.</div></div>
+          <div class="qa-item"><div class="q">12. How to use SVM?</div><div class="a"><code>SVC(kernel='rbf')</code>.</div></div>
+          <div class="qa-item"><div class="q">13. How to use Linear Regression?</div><div class="a"><code>LinearRegression()</code>.</div></div>
+          <div class="qa-item"><div class="q">14. What is a confusion matrix?</div><div class="a"><code>confusion_matrix(y_test, y_pred)</code>.</div></div>
+          <div class="qa-item"><div class="q">15. What is precision?</div><div class="a">True positives / (true positives + false positives).</div></div>
+          <div class="qa-item"><div class="q">16. What is recall?</div><div class="a">True positives / (true positives + false negatives).</div></div>
+          <div class="qa-item"><div class="q">17. What is F1-score?</div><div class="a">Harmonic mean of precision and recall.</div></div>
+          <div class="qa-item"><div class="q">18. How to handle overfitting?</div><div class="a">Regularization, cross-validation, simpler models.</div></div>
+          <div class="qa-item"><div class="q">19. What is GridSearchCV?</div><div class="a">Hyperparameter tuning with cross-validation.</div></div>
+          <div class="qa-item"><div class="q">20. How to encode categorical variables?</div><div class="a"><code>OneHotEncoder()</code> or <code>LabelEncoder()</code>.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== STATISTICS CARD ==================== -->
+      <details class="int-card" data-f="stats">
+        <summary>📊 Statistics – 250+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=600&h=300&fit=crop" alt="Statistics" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is mean?</div><div class="a">Average of all values; sum / count.</div></div>
+          <div class="qa-item"><div class="q">2. What is median?</div><div class="a">Middle value when data is sorted.</div></div>
+          <div class="qa-item"><div class="q">3. What is mode?</div><div class="a">Most frequently occurring value.</div></div>
+          <div class="qa-item"><div class="q">4. What is standard deviation?</div><div class="a">Measure of spread around the mean.</div></div>
+          <div class="qa-item"><div class="q">5. What is variance?</div><div class="a">Square of standard deviation.</div></div>
+          <div class="qa-item"><div class="q">6. What is correlation?</div><div class="a">Measure of linear relationship between two variables.</div></div>
+          <div class="qa-item"><div class="q">7. What is covariance?</div><div class="a">Measure of how two variables change together.</div></div>
+          <div class="qa-item"><div class="q">8. What is a p-value?</div><div class="a">Probability of seeing data as extreme if null is true.</div></div>
+          <div class="qa-item"><div class="q">9. What is a confidence interval?</div><div class="a">Range likely containing the true parameter.</div></div>
+          <div class="qa-item"><div class="q">10. What is a t-test?</div><div class="a">Tests difference between means.</div></div>
+          <div class="qa-item"><div class="q">11. What is ANOVA?</div><div class="a">Tests difference among multiple group means.</div></div>
+          <div class="qa-item"><div class="q">12. What is chi-square test?</div><div class="a">Tests independence between categorical variables.</div></div>
+          <div class="qa-item"><div class="q">13. What is normal distribution?</div><div class="a">Bell-shaped, symmetric distribution.</div></div>
+          <div class="qa-item"><div class="q">14. What is skewness?</div><div class="a">Asymmetry of a distribution.</div></div>
+          <div class="qa-item"><div class="q">15. What is kurtosis?</div><div class="a">Measure of tail heaviness.</div></div>
+          <div class="qa-item"><div class="q">16. What is central limit theorem?</div><div class="a">Sampling distribution of mean approaches normal.</div></div>
+          <div class="qa-item"><div class="q">17. What is Type I error?</div><div class="a">False positive; rejecting true null.</div></div>
+          <div class="qa-item"><div class="q">18. What is Type II error?</div><div class="a">False negative; failing to reject false null.</div></div>
+          <div class="qa-item"><div class="q">19. What is statistical power?</div><div class="a">Probability of detecting a true effect.</div></div>
+          <div class="qa-item"><div class="q">20. What is bootstrapping?</div><div class="a">Resampling with replacement to estimate distribution.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== MACHINE LEARNING CARD ==================== -->
+      <details class="int-card" data-f="ml">
+        <summary>🧠 Machine Learning – 250+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=300&fit=crop" alt="AI Machine Learning" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is supervised learning?</div><div class="a">Learning from labeled data to predict outcomes.</div></div>
+          <div class="qa-item"><div class="q">2. What is unsupervised learning?</div><div class="a">Finding patterns in unlabeled data.</div></div>
+          <div class="qa-item"><div class="q">3. What is overfitting?</div><div class="a">Model memorizes training data; poor generalization.</div></div>
+          <div class="qa-item"><div class="q">4. What is underfitting?</div><div class="a">Model too simple to capture patterns.</div></div>
+          <div class="qa-item"><div class="q">5. What is bias-variance tradeoff?</div><div class="a">Balance between underfitting and overfitting.</div></div>
+          <div class="qa-item"><div class="q">6. What is cross-validation?</div><div class="a">Evaluating model on multiple train/test splits.</div></div>
+          <div class="qa-item"><div class="q">7. What is regularization?</div><div class="a">Penalty to prevent overfitting (L1/L2).</div></div>
+          <div class="qa-item"><div class="q">8. What is feature engineering?</div><div class="a">Creating new features to improve model.</div></div>
+          <div class="qa-item"><div class="q">9. What is feature selection?</div><div class="a">Selecting most relevant features.</div></div>
+          <div class="qa-item"><div class="q">10. What is dimensionality reduction?</div><div class="a">Reducing number of features (PCA, t-SNE).</div></div>
+          <div class="qa-item"><div class="q">11. What is ensemble learning?</div><div class="a">Combining multiple models for better performance.</div></div>
+          <div class="qa-item"><div class="q">12. What is bagging?</div><div class="a">Bootstrap aggregating; reduces variance.</div></div>
+          <div class="qa-item"><div class="q">13. What is boosting?</div><div class="a">Sequential training; reduces bias.</div></div>
+          <div class="qa-item"><div class="q">14. What is a decision tree?</div><div class="a">Tree-based model using rules to split features.</div></div>
+          <div class="qa-item"><div class="q">15. What is random forest?</div><div class="a">Ensemble of decision trees.</div></div>
+          <div class="qa-item"><div class="q">16. What is gradient boosting?</div><div class="a">Sequential ensemble correcting errors.</div></div>
+          <div class="qa-item"><div class="q">17. What is XGBoost?</div><div class="a">Efficient gradient boosting implementation.</div></div>
+          <div class="qa-item"><div class="q">18. What is SVM?</div><div class="a">Support Vector Machine; finds optimal hyperplane.</div></div>
+          <div class="qa-item"><div class="q">19. What is K-means?</div><div class="a">Clustering algorithm partitioning data into k clusters.</div></div>
+          <div class="qa-item"><div class="q">20. What is ROC curve?</div><div class="a">Plots true positive rate vs false positive rate.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== DEEP LEARNING CARD ==================== -->
+      <details class="int-card" data-f="dl">
+        <summary>🔮 Deep Learning – 250+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=300&fit=crop" alt="Neural Networks" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is a neural network?</div><div class="a">Layers of interconnected nodes learning patterns.</div></div>
+          <div class="qa-item"><div class="q">2. What is a perceptron?</div><div class="a">Single neuron; basic unit of neural network.</div></div>
+          <div class="qa-item"><div class="q">3. What is an activation function?</div><div class="a">Non-linear function applied to neuron output (ReLU, sigmoid).</div></div>
+          <div class="qa-item"><div class="q">4. What is backpropagation?</div><div class="a">Algorithm to compute gradients and update weights.</div></div>
+          <div class="qa-item"><div class="q">5. What is a loss function?</div><div class="a">Measures difference between predicted and actual values.</div></div>
+          <div class="qa-item"><div class="q">6. What is gradient descent?</div><div class="a">Optimization algorithm minimizing loss function.</div></div>
+          <div class="qa-item"><div class="q">7. What is a learning rate?</div><div class="a">Step size for weight updates.</div></div>
+          <div class="qa-item"><div class="q">8. What is a CNN?</div><div class="a">Convolutional Neural Network; excels at image data.</div></div>
+          <div class="qa-item"><div class="q">9. What is an RNN?</div><div class="a">Recurrent Neural Network; handles sequential data.</div></div>
+          <div class="qa-item"><div class="q">10. What is an LSTM?</div><div class="a">Long Short-Term Memory; handles long dependencies.</div></div>
+          <div class="qa-item"><div class="q">11. What is a transformer?</div><div class="a">Architecture using attention mechanism.</div></div>
+          <div class="qa-item"><div class="q">12. What is dropout?</div><div class="a">Randomly deactivates neurons to prevent overfitting.</div></div>
+          <div class="qa-item"><div class="q">13. What is batch normalization?</div><div class="a">Normalizes layer inputs to stabilize training.</div></div>
+          <div class="qa-item"><div class="q">14. What is transfer learning?</div><div class="a">Using pre-trained model for new task.</div></div>
+          <div class="qa-item"><div class="q">15. What is an epoch?</div><div class="a">One complete pass through training data.</div></div>
+          <div class="qa-item"><div class="q">16. What is a batch?</div><div class="a">Subset of data processed before updating weights.</div></div>
+          <div class="qa-item"><div class="q">17. What is vanishing gradient?</div><div class="a">Gradients become too small to learn.</div></div>
+          <div class="qa-item"><div class="q">18. What is exploding gradient?</div><div class="a">Gradients become too large; unstable training.</div></div>
+          <div class="qa-item"><div class="q">19. What is BERT?</div><div class="a">Bidirectional Encoder Representations from Transformers.</div></div>
+          <div class="qa-item"><div class="q">20. What is GPT?</div><div class="a">Generative Pre-trained Transformer for text.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== NLP CARD ==================== -->
+      <details class="int-card" data-f="nlp">
+        <summary>🗣️ NLP – 250+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=600&h=300&fit=crop" alt="Natural Language Processing" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is NLP?</div><div class="a">Natural Language Processing; computers understanding human language.</div></div>
+          <div class="qa-item"><div class="q">2. What is tokenization?</div><div class="a">Splitting text into tokens (words, subwords).</div></div>
+          <div class="qa-item"><div class="q">3. What is stemming?</div><div class="a">Reducing words to root form (crude).</div></div>
+          <div class="qa-item"><div class="q">4. What is lemmatization?</div><div class="a">Reducing words to dictionary form (intelligent).</div></div>
+          <div class="qa-item"><div class="q">5. What is a stop word?</div><div class="a">Common word removed from text (the, is, at).</div></div>
+          <div class="qa-item"><div class="q">6. What is TF-IDF?</div><div class="a">Term Frequency-Inverse Document Frequency; word importance.</div></div>
+          <div class="qa-item"><div class="q">7. What is bag of words?</div><div class="a">Text representation as word counts.</div></div>
+          <div class="qa-item"><div class="q">8. What is word embedding?</div><div class="a">Dense vector representation of words.</div></div>
+          <div class="qa-item"><div class="q">9. What is Word2Vec?</div><div class="a">Method to learn word embeddings.</div></div>
+          <div class="qa-item"><div class="q">10. What is sentiment analysis?</div><div class="a">Classifying text as positive, negative, or neutral.</div></div>
+          <div class="qa-item"><div class="q">11. What is named entity recognition?</div><div class="a">Identifying entities (person, org, location) in text.</div></div>
+          <div class="qa-item"><div class="q">12. What is topic modeling?</div><div class="a">Discovering abstract topics in documents.</div></div>
+          <div class="qa-item"><div class="q">13. What is LDA?</div><div class="a">Latent Dirichlet Allocation; generative topic model.</div></div>
+          <div class="qa-item"><div class="q">14. What is text classification?</div><div class="a">Categorizing text into predefined classes.</div></div>
+          <div class="qa-item"><div class="q">15. What is sequence-to-sequence?</div><div class="a">Model mapping input sequence to output sequence.</div></div>
+          <div class="qa-item"><div class="q">16. What is attention mechanism?</div><div class="a">Weights input tokens by relevance.</div></div>
+          <div class="qa-item"><div class="q">17. What is a language model?</div><div class="a">Model predicting next token given previous tokens.</div></div>
+          <div class="qa-item"><div class="q">18. What is perplexity?</div><div class="a">Measure of how well model predicts a sample.</div></div>
+          <div class="qa-item"><div class="q">19. What is BLEU score?</div><div class="a">Metric for evaluating machine translation.</div></div>
+          <div class="qa-item"><div class="q">20. What is cosine similarity?</div><div class="a">Measure of similarity between two vectors.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== TIME SERIES CARD ==================== -->
+      <details class="int-card" data-f="timeseries">
+        <summary>⏰ Time Series – 250+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&h=300&fit=crop" alt="Time Series Analysis" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is time series?</div><div class="a">Data points indexed in time order.</div></div>
+          <div class="qa-item"><div class="q">2. What is trend?</div><div class="a">Long-term direction in data.</div></div>
+          <div class="qa-item"><div class="q">3. What is seasonality?</div><div class="a">Repeating patterns at regular intervals.</div></div>
+          <div class="qa-item"><div class="q">4. What is cyclical pattern?</div><div class="a">Fluctuations without fixed frequency.</div></div>
+          <div class="qa-item"><div class="q">5. What is stationarity?</div><div class="a">Statistical properties don't change over time.</div></div>
+          <div class="qa-item"><div class="q">6. What is autocorrelation?</div><div class="a">Correlation of a variable with its lagged values.</div></div>
+          <div class="qa-item"><div class="q">7. What is white noise?</div><div class="a">Uncorrelated random variables with zero mean.</div></div>
+          <div class="qa-item"><div class="q">8. What is ARIMA?</div><div class="a">Autoregressive Integrated Moving Average model.</div></div>
+          <div class="qa-item"><div class="q">9. What is SARIMA?</div><div class="a">Seasonal ARIMA; includes seasonal components.</div></div>
+          <div class="qa-item"><div class="q">10. What is exponential smoothing?</div><div class="a">Weighted average with exponentially decreasing weights.</div></div>
+          <div class="qa-item"><div class="q">11. What is Holt-Winters?</div><div class="a">Exponential smoothing with trend and seasonality.</div></div>
+          <div class="qa-item"><div class="q">12. What is a random walk?</div><div class="a">Each step is random; cumulative sum of white noise.</div></div>
+          <div class="qa-item"><div class="q">13. What is a unit root?</div><div class="a">Non-stationary time series; shocks have permanent effects.</div></div>
+          <div class="qa-item"><div class="q">14. What is Dickey-Fuller test?</div><div class="a">Tests for unit root in time series.</div></div>
+          <div class="qa-item"><div class="q">15. What is cointegration?</div><div class="a">Non-stationary series that move together.</div></div>
+          <div class="qa-item"><div class="q">16. What is Granger causality?</div><div class="a">Tests if one time series predicts another.</div></div>
+          <div class="qa-item"><div class="q">17. What is VAR?</div><div class="a">Vector Autoregression; models multiple time series.</div></div>
+          <div class="qa-item"><div class="q">18. What is GARCH?</div><div class="a">Models time-varying volatility.</div></div>
+          <div class="qa-item"><div class="q">19. What is decomposition?</div><div class="a">Separating time series into trend, seasonal, residual.</div></div>
+          <div class="qa-item"><div class="q">20. What is forecasting?</div><div class="a">Predicting future values based on historical data.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== VISUALIZATION CARD ==================== -->
+      <details class="int-card" data-f="viz">
+        <summary>
+          <span>📈 Visualization – 250+ Questions & Answers</span>
+          <button class="fs-expand-btn" title="Expand to full screen">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+          </button>
+        </summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop&hue=30" alt="Data Visualization" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is data visualization?</div><div class="a">Graphical representation of data.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop" alt="Data Visualization Example" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">2. When to use a bar chart?</div><div class="a">Comparing categorical data.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=400&h=200&fit=crop" alt="Bar Chart Example" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">3. When to use a line chart?</div><div class="a">Showing trends over time.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&hue=60" alt="Line Chart Example" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">4. When to use a scatter plot?</div><div class="a">Showing relationship between two variables.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=200&fit=crop" alt="Scatter Plot Example" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">5. When to use a histogram?</div><div class="a">Showing distribution of a variable.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=400&h=200&fit=crop&hue=120" alt="Histogram Example" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">6. When to use a box plot?</div><div class="a">Showing distribution and outliers.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=200&fit=crop&hue=180" alt="Box Plot Example" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">7. When to use a heatmap?</div><div class="a">Showing values in a matrix with colors.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&hue=240" alt="Heatmap Example" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">8. When to use a pie chart?</div><div class="a">Showing proportions (few categories only).<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=400&h=200&fit=crop&hue=300" alt="Pie Chart Example" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">9. What is a dashboard?</div><div class="a">Collection of visualizations for monitoring.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop" alt="Dashboard Example" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">10. What is a treemap?</div><div class="a">Nested rectangles showing hierarchical data.<div class="answer-img-wrap"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&hue=200" alt="Treemap Example" class="answer-img" loading="lazy"></div></div></div>
+          <div class="qa-item"><div class="q">11. What is a waterfall chart?</div><div class="a">Shows cumulative effect of sequential values.</div></div>
+          <div class="qa-item"><div class="q">12. What is a funnel chart?</div><div class="a">Shows progression through stages.</div></div>
+          <div class="qa-item"><div class="q">13. What is a gauge chart?</div><div class="a">Shows single value against a scale.</div></div>
+          <div class="qa-item"><div class="q">14. What is a bubble chart?</div><div class="a">Scatter plot with point size representing a third variable.</div></div>
+          <div class="qa-item"><div class="q">15. What is a choropleth map?</div><div class="a">Map with regions shaded by value.</div></div>
+          <div class="qa-item"><div class="q">16. What is color theory in viz?</div><div class="a">Using color effectively to convey meaning.</div></div>
+          <div class="qa-item"><div class="q">17. What is data-ink ratio?</div><div class="a">Maximize ink used for data, minimize decoration.</div></div>
+          <div class="qa-item"><div class="q">18. What is chart junk?</div><div class="a">Unnecessary visual elements that distract.</div></div>
+          <div class="qa-item"><div class="q">19. What is pre-attentive processing?</div><div class="a">Visual properties noticed without conscious effort.</div></div>
+          <div class="qa-item"><div class="q">20. What is visual hierarchy?</div><div class="a">Using size, color, position to guide attention.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== A/B TESTING CARD ==================== -->
+      <details class="int-card" data-f="ab">
+        <summary>🧪 A/B Testing – 250+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=300&fit=crop" alt="A/B Testing Experiment" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is A/B testing?</div><div class="a">Randomized experiment comparing two versions.</div></div>
+          <div class="qa-item"><div class="q">2. What is a control group?</div><div class="a">Group receiving the existing version.</div></div>
+          <div class="qa-item"><div class="q">3. What is a treatment group?</div><div class="a">Group receiving the new version.</div></div>
+          <div class="qa-item"><div class="q">4. What is statistical significance?</div><div class="a">Probability that difference is not due to chance.</div></div>
+          <div class="qa-item"><div class="q">5. What is practical significance?</div><div class="a">Whether effect size matters for business.</div></div>
+          <div class="qa-item"><div class="q">6. What is a p-value in A/B testing?</div><div class="a">Probability of seeing difference if no real effect.</div></div>
+          <div class="qa-item"><div class="q">7. What is sample size?</div><div class="a">Number of observations needed for reliable results.</div></div>
+          <div class="qa-item"><div class="q">8. What is power?</div><div class="a">Probability of detecting a true effect.</div></div>
+          <div class="qa-item"><div class="q">9. What is Type I error?</div><div class="a">False positive; concluding effect when none exists.</div></div>
+          <div class="qa-item"><div class="q">10. What is Type II error?</div><div class="a">False negative; missing a real effect.</div></div>
+          <div class="qa-item"><div class="q">11. What is minimum detectable effect?</div><div class="a">Smallest effect you can detect.</div></div>
+          <div class="qa-item"><div class="q">12. What is confidence interval?</div><div class="a">Range likely containing true effect.</div></div>
+          <div class="qa-item"><div class="q">13. What is randomization?</div><div class="a">Random assignment to groups.</div></div>
+          <div class="qa-item"><div class="q">14. What is confounding?</div><div class="a">External factor affecting both groups.</div></div>
+          <div class="qa-item"><div class="q">15. What is novelty effect?</div><div class="a">Temporary change in behavior due to novelty.</div></div>
+          <div class="qa-item"><div class="q">16. What is selection bias?</div><div class="a">Systematic differences between groups before test.</div></div>
+          <div class="qa-item"><div class="q">17. What is Simpson's paradox?</div><div class="a">Trend appears in groups but reverses when combined.</div></div>
+          <div class="qa-item"><div class="q">18. What is multi-armed bandit?</div><div class="a">Adaptive testing allocating more to better variant.</div></div>
+          <div class="qa-item"><div class="q">19. What is sequential testing?</div><div class="a">Analyzing results as data arrives.</div></div>
+          <div class="qa-item"><div class="q">20. What is guardrail metric?</div><div class="a">Metric that shouldn't degrade during test.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== EXCEL CARD ==================== -->
+      <details class="int-card" data-f="excel">
+        <summary>📗 Excel – 250+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&h=300&fit=crop" alt="Excel Spreadsheet" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is VLOOKUP?</div><div class="a">Vertical lookup; searches for value in first column.</div></div>
+          <div class="qa-item"><div class="q">2. What is HLOOKUP?</div><div class="a">Horizontal lookup; searches for value in first row.</div></div>
+          <div class="qa-item"><div class="q">3. What is INDEX/MATCH?</div><div class="a">More flexible alternative to VLOOKUP.</div></div>
+          <div class="qa-item"><div class="q">4. What is XLOOKUP?</div><div class="a">Modern replacement for VLOOKUP; more powerful.</div></div>
+          <div class="qa-item"><div class="q">5. What is a pivot table?</div><div class="a">Interactive table to summarize data.</div></div>
+          <div class="qa-item"><div class="q">6. What is conditional formatting?</div><div class="a">Formats cells based on rules.</div></div>
+          <div class="qa-item"><div class="q">7. What is data validation?</div><div class="a">Restricts what can be entered in a cell.</div></div>
+          <div class="qa-item"><div class="q">8. What is SUMIF?</div><div class="a">Sums values based on a condition.</div></div>
+          <div class="qa-item"><div class="q">9. What is SUMIFS?</div><div class="a">Sums values based on multiple conditions.</div></div>
+          <div class="qa-item"><div class="q">10. What is COUNTIF?</div><div class="a">Counts cells meeting a condition.</div></div>
+          <div class="qa-item"><div class="q">11. What is COUNTIFS?</div><div class="a">Counts cells meeting multiple conditions.</div></div>
+          <div class="qa-item"><div class="q">12. What is a macro?</div><div class="a">Automated sequence of commands (VBA).</div></div>
+          <div class="qa-item"><div class="q">13. What is VBA?</div><div class="a">Visual Basic for Applications; programming in Excel.</div></div>
+          <div class="qa-item"><div class="q">14. What is Power Query?</div><div class="a">ETL tool in Excel; connects, transforms, loads data.</div></div>
+          <div class="qa-item"><div class="q">15. What is Power Pivot?</div><div class="a">In-memory data modeling; handles millions of rows.</div></div>
+          <div class="qa-item"><div class="q">16. What is DAX?</div><div class="a">Data Analysis Expressions; formula language.</div></div>
+          <div class="qa-item"><div class="q">17. What is a slicer?</div><div class="a">Visual filter for pivot tables.</div></div>
+          <div class="qa-item"><div class="q">18. What is goal seek?</div><div class="a">Finds input needed to achieve a goal.</div></div>
+          <div class="qa-item"><div class="q">19. What is a sparkline?</div><div class="a">Miniature chart in a cell.</div></div>
+          <div class="qa-item"><div class="q">20. What is array formula?</div><div class="a">Performs multiple calculations on arrays.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== DATA ENGINEERING CARD ==================== -->
+      <details class="int-card" data-f="dataeng">
+        <summary>⚙️ Data Engineering – 250+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=300&fit=crop" alt="Data Engineering Infrastructure" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is ETL?</div><div class="a">Extract, Transform, Load.</div></div>
+          <div class="qa-item"><div class="q">2. What is ELT?</div><div class="a">Extract, Load, Transform.</div></div>
+          <div class="qa-item"><div class="q">3. What is a data warehouse?</div><div class="a">Central repository for analytical data.</div></div>
+          <div class="qa-item"><div class="q">4. What is a data lake?</div><div class="a">Stores raw data in native format.</div></div>
+          <div class="qa-item"><div class="q">5. What is a data mart?</div><div class="a">Subset of data warehouse for specific business line.</div></div>
+          <div class="qa-item"><div class="q">6. What is OLTP?</div><div class="a">Online Transaction Processing; optimized for writes.</div></div>
+          <div class="qa-item"><div class="q">7. What is OLAP?</div><div class="a">Online Analytical Processing; optimized for reads.</div></div>
+          <div class="qa-item"><div class="q">8. What is a star schema?</div><div class="a">Fact table surrounded by dimension tables.</div></div>
+          <div class="qa-item"><div class="q">9. What is a snowflake schema?</div><div class="a">Normalized version of star schema.</div></div>
+          <div class="qa-item"><div class="q">10. What is a fact table?</div><div class="a">Contains measures/metrics; central table.</div></div>
+          <div class="qa-item"><div class="q">11. What is a dimension table?</div><div class="a">Contains descriptive attributes.</div></div>
+          <div class="qa-item"><div class="q">12. What is CDC?</div><div class="a">Change Data Capture; captures changes in source.</div></div>
+          <div class="qa-item"><div class="q">13. What is data lineage?</div><div class="a">Tracks data origins and transformations.</div></div>
+          <div class="qa-item"><div class="q">14. What is data orchestration?</div><div class="a">Managing workflows and dependencies.</div></div>
+          <div class="qa-item"><div class="q">15. What is idempotency?</div><div class="a">Running process multiple times yields same result.</div></div>
+          <div class="qa-item"><div class="q">16. What is Apache Spark?</div><div class="a">Distributed processing framework.</div></div>
+          <div class="qa-item"><div class="q">17. What is Apache Kafka?</div><div class="a">Distributed streaming platform.</div></div>
+          <div class="qa-item"><div class="q">18. What is Apache Airflow?</div><div class="a">Workflow orchestration; Python-based DAGs.</div></div>
+          <div class="qa-item"><div class="q">19. What is dbt?</div><div class="a">Data Build Tool; analytics engineering.</div></div>
+          <div class="qa-item"><div class="q">20. What is a DAG?</div><div class="a">Directed Acyclic Graph; defines task dependencies.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== BIG DATA CARD ==================== -->
+      <details class="int-card" data-f="bigdata">
+        <summary>💾 Big Data – 250+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=300&fit=crop" alt="Big Data Server" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is big data?</div><div class="a">Data too large for traditional processing.</div></div>
+          <div class="qa-item"><div class="q">2. What are the 3 Vs?</div><div class="a">Volume, Velocity, Variety.</div></div>
+          <div class="qa-item"><div class="q">3. What is volume?</div><div class="a">Large amount of data.</div></div>
+          <div class="qa-item"><div class="q">4. What is velocity?</div><div class="a">Speed of data generation and processing.</div></div>
+          <div class="qa-item"><div class="q">5. What is variety?</div><div class="a">Different types of data (structured, unstructured).</div></div>
+          <div class="qa-item"><div class="q">6. What is Hadoop?</div><div class="a">Distributed storage and processing framework.</div></div>
+          <div class="qa-item"><div class="q">7. What is HDFS?</div><div class="a">Hadoop Distributed File System.</div></div>
+          <div class="qa-item"><div class="q">8. What is MapReduce?</div><div class="a">Distributed processing paradigm.</div></div>
+          <div class="qa-item"><div class="q">9. What is Spark?</div><div class="a">In-memory distributed processing.</div></div>
+          <div class="qa-item"><div class="q">10. What is Hive?</div><div class="a">SQL-like queries on Hadoop.</div></div>
+          <div class="qa-item"><div class="q">11. What is Pig?</div><div class="a">High-level platform for MapReduce.</div></div>
+          <div class="qa-item"><div class="q">12. What is HBase?</div><div class="a">NoSQL database on Hadoop.</div></div>
+          <div class="qa-item"><div class="q">13. What is Cassandra?</div><div class="a">Distributed NoSQL database.</div></div>
+          <div class="qa-item"><div class="q">14. What is MongoDB?</div><div class="a">Document-oriented NoSQL database.</div></div>
+          <div class="qa-item"><div class="q">15. What is a data lake?</div><div class="a">Stores raw data in native format.</div></div>
+          <div class="qa-item"><div class="q">16. What is a data lakehouse?</div><div class="a">Combines lake flexibility with warehouse reliability.</div></div>
+          <div class="qa-item"><div class="q">17. What is Delta Lake?</div><div class="a">ACID transactions on data lakes.</div></div>
+          <div class="qa-item"><div class="q">18. What is Apache Iceberg?</div><div class="a">Open table format for large datasets.</div></div>
+          <div class="qa-item"><div class="q">19. What is data partitioning?</div><div class="a">Splitting data for parallel processing.</div></div>
+          <div class="qa-item"><div class="q">20. What is sharding?</div><div class="a">Horizontal partitioning across servers.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== R CARD ==================== -->
+      <details class="int-card" data-f="r">
+        <summary>🇷 R – 250+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=300&fit=crop" alt="R Programming" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. What is R?</div><div class="a">Programming language for statistical computing.</div></div>
+          <div class="qa-item"><div class="q">2. What is RStudio?</div><div class="a">IDE for R development.</div></div>
+          <div class="qa-item"><div class="q">3. What is a vector in R?</div><div class="a">Basic data structure holding same-type elements.</div></div>
+          <div class="qa-item"><div class="q">4. What is a data frame?</div><div class="a">2-D table similar to pandas DataFrame.</div></div>
+          <div class="qa-item"><div class="q">5. What is a list in R?</div><div class="a">Can contain different types; recursive.</div></div>
+          <div class="qa-item"><div class="q">6. What is a matrix?</div><div class="a">2-D array with same-type elements.</div></div>
+          <div class="qa-item"><div class="q">7. What is dplyr?</div><div class="a">Grammar of data manipulation.</div></div>
+          <div class="qa-item"><div class="q">8. What is ggplot2?</div><div class="a">Grammar of graphics for visualization.</div></div>
+          <div class="qa-item"><div class="q">9. What is tidyr?</div><div class="a">Tools for tidying data.</div></div>
+          <div class="qa-item"><div class="q">10. What is readr?</div><div class="a">Fast reading of rectangular data.</div></div>
+          <div class="qa-item"><div class="q">11. What is purrr?</div><div class="a">Functional programming tools.</div></div>
+          <div class="qa-item"><div class="q">12. What is stringr?</div><div class="a">String manipulation.</div></div>
+          <div class="qa-item"><div class="q">13. What is lubridate?</div><div class="a">Date-time manipulation.</div></div>
+          <div class="qa-item"><div class="q">14. What is the pipe operator (%>%)?</div><div class="a">Chains operations, passing result to next function.</div></div>
+          <div class="qa-item"><div class="q">15. What is tidyverse?</div><div class="a">Collection of R packages for data science.</div></div>
+          <div class="qa-item"><div class="q">16. What is R Markdown?</div><div class="a">Dynamic documents with text, code, output.</div></div>
+          <div class="qa-item"><div class="q">17. What is Shiny?</div><div class="a">Interactive web apps in R.</div></div>
+          <div class="qa-item"><div class="q">18. What is caret?</div><div class="a">Classification and regression training.</div></div>
+          <div class="qa-item"><div class="q">19. What is data.table?</div><div class="a">Fast data manipulation package.</div></div>
+          <div class="qa-item"><div class="q">20. What is factor in R?</div><div class="a">Categorical variable type.</div></div>
+        </div>
+      </details>
+
+      <!-- ==================== BEHAVIORAL CARD ==================== -->
+      <details class="int-card" data-f="behavioral">
+        <summary>💬 Behavioral – 250+ Questions & Answers</summary>
+        <div class="qa-list">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=300&fit=crop" alt="Behavioral Interview" class="card-img" loading="lazy">
+          </div>
+          <div class="qa-item"><div class="q">1. Tell me about an analysis that changed a decision.</div><div class="a">Use STAR: Situation, Task, Action, Result.</div></div>
+          <div class="qa-item"><div class="q">2. How would you explain a result to a non-technical boss?</div><div class="a">Lead with conclusion, use visual, avoid jargon.</div></div>
+          <div class="qa-item"><div class="q">3. Describe a time you disagreed with a colleague.</div><div class="a">Focus on finding common ground.</div></div>
+          <div class="qa-item"><div class="q">4. How do you handle tight deadlines?</div><div class="a">Prioritize key deliverables, communicate.</div></div>
+          <div class="qa-item"><div class="q">5. Tell me about a project you're proud of.</div><div class="a">Highlight problem, role, and impact.</div></div>
+          <div class="qa-item"><div class="q">6. How do you handle a mistake?</div><div class="a">Admit it, fix it, learn from it.</div></div>
+          <div class="qa-item"><div class="q">7. How do you handle ambiguous requirements?</div><div class="a">Ask questions, propose assumptions, iterate.</div></div>
+          <div class="qa-item"><div class="q">8. How do you ensure data quality?</div><div class="a">Validate sources, run checks, document.</div></div>
+          <div class="qa-item"><div class="q">9. How do you prioritize multiple requests?</div><div class="a">Assess impact, urgency, resources.</div></div>
+          <div class="qa-item"><div class="q">10. How do you explain a p-value to a business person?</div><div class="a">"How surprising is the data if there's no real effect?"</div></div>
+          <div class="qa-item"><div class="q">11. Tell me about a time you failed.</div><div class="a">Show self-awareness and growth.</div></div>
+          <div class="qa-item"><div class="q">12. How do you handle a stakeholder who wants cherry-picked results?</div><div class="a">Present all data, explain trade-offs.</div></div>
+          <div class="qa-item"><div class="q">13. How do you keep up with new tools?</div><div class="a">Continuous learning: courses, projects, reading.</div></div>
+          <div class="qa-item"><div class="q">14. How do you work with a difficult colleague?</div><div class="a">Stay professional, communicate openly.</div></div>
+          <div class="qa-item"><div class="q">15. How do you present bad news with data?</div><div class="a">Be transparent, show evidence, offer alternatives.</div></div>
+          <div class="qa-item"><div class="q">16. What motivates you?</div><div class="a">Solving real problems and seeing impact.</div></div>
+          <div class="qa-item"><div class="q">17. How do you handle being wrong?</div><div class="a">Accept, learn, and adjust.</div></div>
+          <div class="qa-item"><div class="q">18. Describe a time you led a project.</div><div class="a">Show initiative, coordination, outcome.</div></div>
+          <div class="qa-item"><div class="q">19. How do you handle data privacy concerns?</div><div class="a">Follow policies, anonymize, ensure compliance.</div></div>
+          <div class="qa-item"><div class="q">20. How do you handle a request for impossible analysis?</div><div class="a">Discuss constraints, propose alternatives.</div></div>
+        </div>
+      </details>
+
+    </div> <!-- end int-grid -->
+
+    <!-- Language & Library Hub -->
+    <div class="lang-lib" style="margin-top:50px; padding:30px; background:var(--card2); border-radius:14px;">
+      <h3 style="text-align:center;">Languages & Libraries</h3>
+      <p style="text-align:center; color:var(--muted);">A quick reference for the top tools used in data analytics.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; margin-top:24px;">
+        <div class="lang-card" style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px;">
+          <h4>🐍 Python</h4>
+          <ul>
+            <li><span class="lib-name">pandas</span> - data wrangling</li>
+            <li><span class="lib-name">numpy</span> - numerical computing</li>
+            <li><span class="lib-name">matplotlib</span> - plotting</li>
+            <li><span class="lib-name">seaborn</span> - statistical viz</li>
+            <li><span class="lib-name">scikit-learn</span> - ML</li>
+          </ul>
+        </div>
+        <div class="lang-card" style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px;">
+          <h4>🇷 R</h4>
+          <ul>
+            <li><span class="lib-name">dplyr</span> - data manipulation</li>
+            <li><span class="lib-name">ggplot2</span> - visualization</li>
+            <li><span class="lib-name">tidyr</span> - tidy data</li>
+            <li><span class="lib-name">caret</span> - ML</li>
+            <li><span class="lib-name">shiny</span> - interactive apps</li>
+          </ul>
+        </div>
+        <div class="lang-card" style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px;">
+          <h4>🧮 SQL</h4>
+          <ul>
+            <li><span class="lib-name">PostgreSQL</span> - advanced features</li>
+            <li><span class="lib-name">MySQL</span> - widespread</li>
+            <li><span class="lib-name">SQLite</span> - lightweight</li>
+            <li><span class="lib-name">BigQuery</span> - cloud analytics</li>
+            <li><span class="lib-name">Snowflake</span> - data warehouse</li>
+          </ul>
+        </div>
+        <div class="lang-card" style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px;">
+          <h4>📈 BI Tools</h4>
+          <ul>
+            <li><span class="lib-name">Tableau</span> - interactive dashboards</li>
+            <li><span class="lib-name">Power BI</span> - Microsoft analytics</li>
+            <li><span class="lib-name">Looker</span> - business intelligence</li>
+            <li><span class="lib-name">Qlik</span> - associative model</li>
+            <li><span class="lib-name">Data Studio</span> - Google's free BI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="int-banner">
+      <p>Prefers doing over talking? I'm happy to do a <span style="color:var(--accent)">live SQL or case-study round</span> and narrate my thinking out loud.</p>
+      <a class="btn" href="../index.html#contact">Book a practice round</a>
+    </div>
+  </section>
+
+  <footer>
+    Built with ❤️ &amp; lots of coffee · <span id="yearNow"></span> · Corazon<br>
+    <span style="font-size:.72rem;opacity:.7">Shortcuts: [T] theme · [Esc] clear</span>
+  </footer>
+  <button id="toTop" title="Back to top">↑</button>
+  <div id="toastBox"></div>
+
+  <!-- Full Screen Modal -->
+  <div id="fsModal" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.95); backdrop-filter:blur(10px); flex-direction:column;">
+    <div style="position:sticky; top:0; display:flex; justify-content:flex-end; padding:20px; z-index:10001;">
+      <button id="fsClose" style="background:var(--card); border:1px solid var(--border); color:var(--text); width:44px; height:44px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="fsContent" style="flex:1; overflow-y:auto; padding:0 40px 40px; box-sizing:border-box; display:flex; justify-content:center;"></div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imgModal" style="display:none; position:fixed; inset:0; z-index:10000; background:rgba(0,0,0,0.98); align-items:center; justify-content:center; cursor:zoom-out;">
+    <button id="imgClose" style="position:absolute; top:20px; right:20px; background:var(--card); border:1px solid var(--border); color:var(--text); width:44px; height:44px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:10001;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <img id="imgModalSrc" src="" alt="Full size" style="max-width:95vw; max-height:95vh; object-fit:contain; border-radius:8px; box-shadow:0 0 60px rgba(0,0,0,0.8);">
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Filter functionality
+    const chips = document.querySelectorAll('.int-chip');
+    const cards = document.querySelectorAll('.int-card');
+    const searchInput = document.getElementById('intSearch');
+    const qCountEl = document.getElementById('qCount');
+
+    function updateQuestionCount() {
+      const visibleCards = document.querySelectorAll('.int-card[style*="block"], .int-card:not([style*="none"])');
+      let total = 0;
+      visibleCards.forEach(card => {
+        total += card.querySelectorAll('.qa-item').length;
+      });
+      qCountEl.textContent = total + ' questions';
+    }
+
+    function filterCards() {
+      const filter = document.querySelector('.int-chip.active')?.dataset.f || 'all';
+      const searchTerm = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const topicMatch = filter === 'all' || card.dataset.f === filter;
+        const questionEls = card.querySelectorAll('.qa-item');
+        let hasVisibleQuestion = false;
+        questionEls.forEach(qa => {
+          const qText = qa.querySelector('.q')?.textContent.toLowerCase() || '';
+          const aText = qa.querySelector('.a')?.textContent.toLowerCase() || '';
+          if (qText.includes(searchTerm) || aText.includes(searchTerm)) {
+            qa.style.display = 'block';
+            hasVisibleQuestion = true;
+          } else {
+            qa.style.display = 'none';
+          }
+        });
+        if (topicMatch && (hasVisibleQuestion || searchTerm === '')) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      updateQuestionCount();
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        filterCards();
+      });
+    });
+
+    searchInput.addEventListener('input', filterCards);
+    updateQuestionCount();
+
+    // Full Screen Modal
+    const fsModal = document.getElementById('fsModal');
+    const fsContent = document.getElementById('fsContent');
+    const fsClose = document.getElementById('fsClose');
+    const imgModal = document.getElementById('imgModal');
+    const imgModalSrc = document.getElementById('imgModalSrc');
+    const imgClose = document.getElementById('imgClose');
+
+    function openFullscreen(card) {
+      const clone = card.cloneNode(true);
+      clone.open = true;
+      clone.style.display = 'block';
+      clone.style.maxWidth = '900px';
+      clone.style.width = '100%';
+      clone.style.margin = '0 auto';
+      clone.style.background = 'var(--card)';
+      clone.style.borderRadius = '16px';
+      clone.style.border = '1px solid var(--border)';
+      fsContent.innerHTML = '';
+      fsContent.appendChild(clone);
+      fsModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeFullscreen() {
+      fsModal.style.display = 'none';
+      fsContent.innerHTML = '';
+      document.body.style.overflow = '';
+    }
+
+    function openImage(src) {
+      imgModalSrc.src = src;
+      imgModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeImage() {
+      imgModal.style.display = 'none';
+      imgModalSrc.src = '';
+      document.body.style.overflow = '';
+    }
+
+    fsClose.addEventListener('click', closeFullscreen);
+    fsModal.addEventListener('click', (e) => {
+      if (e.target === fsModal) closeFullscreen();
+    });
+
+    // Image close button
+    if (imgClose) imgClose.addEventListener('click', closeImage);
+    imgModal.addEventListener('click', (e) => {
+      if (e.target === imgModal) closeImage();
+    });
+
+    // Add click handlers to all card images and answer images
+    document.addEventListener('click', (e) => {
+      const img = e.target.closest('.card-img, .answer-img');
+      if (img) {
+        e.preventDefault();
+        e.stopPropagation();
+        const fullSrc = img.src.replace(/w=\d+/, 'w=1200').replace(/h=\d+/, 'h=800').replace(/&hue=\d+/, '');
+        openImage(fullSrc);
+      }
+    });
+
+    // Track which card's expand button was clicked
+    let expandBtnClickedCard = null;
+
+    // Add expand button to each card summary
+    cards.forEach(card => {
+      const summary = card.querySelector('summary');
+      if (summary && !summary.querySelector('.fs-expand-btn')) {
+        // Wrap text in span if not already wrapped
+        if (!summary.querySelector('span')) {
+          const span = document.createElement('span');
+          span.textContent = summary.textContent;
+          summary.innerHTML = '';
+          summary.appendChild(span);
+        }
+        const expandBtn = document.createElement('button');
+        expandBtn.className = 'fs-expand-btn';
+        expandBtn.title = 'Expand to full screen';
+        expandBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>';
+        expandBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          expandBtnClickedCard = card;
+          openFullscreen(card);
+        });
+        summary.appendChild(expandBtn);
+      }
+      // Prevent details from toggling when expand button is clicked
+      card.addEventListener('beforetoggle', (e) => {
+        if (expandBtnClickedCard === card) {
+          e.preventDefault();
+          expandBtnClickedCard = null;
+        }
+      });
+    });
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeFullscreen();
+        closeImage();
+      }
+    });
+  </script>
+</body>
+</html>

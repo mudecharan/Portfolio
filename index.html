@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Corazon — Aspiring Data Analyst Portfolio with Cheatsheets & Live Dashboard">
+  <title>Corazon · Data Analyst Portfolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="progressBar"></div>
+  <div id="cursorGlow"></div>
+  <nav>
+    <div class="logo" onclick="scrollTo({top:0,behavior:'smooth'})">&lt;/&gt; Corazon.Data</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="pages/interview.html">Interview</a></li>
+      <li><a href="#footprint">Footprint</a></li>
+      <li><a href="pages/cheatsheets.html">Cheatsheets</a></li>
+      <li><a href="pages/projects.html">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button class="tool-btn" id="themeBtn" title="Toggle theme (T)">🌙</button>
+      <button class="tool-btn" onclick="window.open('pages/cheatsheets.html','_self')"
+        title="Cheatsheets (/)">🔍</button>
+      <a class="tool-btn" href="resume/Arjun_Patel_Resume.pdf" download title="Download Resume">📄</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" title="Menu">☰</button>
+    </div>
+  </nav>
+  <div id="tickerBar">
+    <span><span class="dot on" id="netDot"></span> <b id="netStatus">Online</b></span>
+    <span>🕐 <b id="clock">--:--:--</b></span>
+    <span>📅 <b id="dateNow">—</b></span>
+    <span>🌍 <b id="tzName">—</b></span>
+    <span>🌐 IP: <b id="ipAddr">loading…</b></span>
+    <span>📍 <b id="locName">detecting…</b></span>
+    <span>⛅ <b id="weather">—</b></span>
+    <span>🔋 <b id="battery">—</b></span>
+    <span>⏱️ Session: <b id="sessionTime">00:00</b></span>
+    <span>👀 Visits: <b id="visitCount">1</b></span>
+  </div>
+
+  <header id="home">
+    <div id="greeting">Hello 👋</div>
+    <h1>I'm <span>Corazon</span><br>Aspiring Data Analyst</h1>
+    <div id="typed"></div>
+    <div class="hero-btns">
+      <button class="btn btn-primary" onclick="window.open('pages/projects.html','_self')">🚀 View My Projects</button>
+      <a class="btn btn-ghost" href="#resume">📄 Resume</a>
+      <a class="btn btn-ghost" href="pages/interview.html">🎯 Interview Prep</a>
+      <button class="btn btn-ghost" onclick="window.open('pages/cheatsheets.html','_self')">📚 Cheatsheets Hub</button>
+    </div>
+    <div class="quote-card">
+      <p id="quoteText">Loading quote…</p>
+      <p id="quoteAuthor">—</p>
+      <button id="quoteRefresh" title="New quote">🔄 new quote (Q)</button>
+    </div>
+    <div class="live-strip">
+      <div class="live-tile">
+        <div class="lbl">Local Time</div>
+        <div class="val" id="clockBig">--:--:--</div>
+        <div class="sub" id="ampmSub">—</div>
+      </div>
+      <div class="live-tile">
+        <div class="lbl">Your Location</div>
+        <div class="val" id="cityTile">Detecting…</div>
+        <div class="sub" id="coords">lat, lon</div>
+      </div>
+      <div class="live-tile">
+        <div class="lbl">Weather Now</div>
+        <div class="val" id="tempTile">—°C</div>
+        <div class="sub" id="condTile">—</div>
+      </div>
+      <div class="live-tile">
+        <div class="lbl">Screen / Browser</div>
+        <div class="val" id="resTile">—</div>
+        <div class="sub" id="browserInfo">—</div>
+      </div>
+    </div>
+  </header>
+  <section id="about">
+    <div class="sec-title">
+      <h2>About <em>Me</em></h2>
+      <p>Fresh graduate · hungry to turn data into decisions</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm <b style="color:var(--accent)">Corazon</b>, a fresher data analyst who has built end-to-end projects
+          across <b style="color:var(--accent)">sales analytics, banking risk, churn prediction and earthquake data</b>
+          — from raw CSVs and SQL databases all the way to dashboards and insights.</p>
+        <p>I learn by doing: every project in my portfolio shipped a real pipeline — data cleaning, SQL modeling, Python
+          EDA, and visual storytelling.</p>
+        <p style="font-family:var(--mono);font-size:.85rem;color:var(--green)">✔ Open to internships, entry-level &amp;
+          freelance work</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-box">
+          <div class="num" data-count="8">0</div>
+          <div class="cap">Personal Projects</div>
+        </div>
+        <div class="stat-box">
+          <div class="num" data-count="37">0</div>
+          <div class="cap">Cheat Topics Written</div>
+        </div>
+        <div class="stat-box">
+          <div class="num" data-count="1169">0</div>
+          <div class="cap">Reference Cards</div>
+        </div>
+        <div class="stat-box">
+          <div class="num" data-count="5">0</div>
+          <div class="cap">Tableau Dashboards</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-title">
+      <h2>Skill <em>Stack</em></h2>
+      <p>Tools I use in my projects every day</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>🗄️ SQL & Databases</h3>
+        <div class="skill-row">
+          <div class="top"><span>Complex Queries & JOINs</span><span>92%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="92"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Window Functions & CTEs</span><span>85%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="85"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Stored Procedures & Views</span><span>80%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="80"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Schema Design & Optimization</span><span>78%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="78"></div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>🐍 Python for Data</h3>
+        <div class="skill-row">
+          <div class="top"><span>Pandas & NumPy</span><span>90%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="90"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Data Cleaning & Wrangling</span><span>92%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="92"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>EDA & Feature Engineering</span><span>85%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="85"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Web Scraping (BeautifulSoup)</span><span>75%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="75"></div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>📊 Data Visualization</h3>
+        <div class="skill-row">
+          <div class="top"><span>Tableau Dashboards</span><span>85%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="85"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Matplotlib & Seaborn</span><span>88%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="88"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Storytelling with Data</span><span>82%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="82"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>KPI Cards & Reporting</span><span>80%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="80"></div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>📈 Statistics & Analytics</h3>
+        <div class="skill-row">
+          <div class="top"><span>Descriptive Statistics</span><span>88%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="88"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Hypothesis Testing</span><span>80%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="80"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Correlation & Regression</span><span>82%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="82"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>A/B Testing Fundamentals</span><span>75%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="75"></div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>📋 Excel & Reporting</h3>
+        <div class="skill-row">
+          <div class="top"><span>VLOOKUP, INDEX-MATCH, Pivots</span><span>90%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="90"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Charts & Conditional Formatting</span><span>85%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="85"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Dashboard Creation</span><span>82%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="82"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Data Validation & Cleaning</span><span>88%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="88"></div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>🔧 Data Engineering Basics</h3>
+        <div class="skill-row">
+          <div class="top"><span>ETL Pipelines</span><span>80%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="80"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Data Quality Validation</span><span>85%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="85"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Automation Scripts</span><span>78%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="78"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="top"><span>Git Version Control</span><span>82%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-w="82"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <div class="sec-title">
+      <h2>My <em>Resume</em></h2>
+      <p>View or download my latest resume</p>
+    </div>
+    <div style="max-width:900px; margin:0 auto; border-radius:16px; overflow:hidden; border:1px solid var(--border); box-shadow:0 10px 40px rgba(0,0,0,0.3);">
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; background:var(--card); border-bottom:1px solid var(--border);">
+        <span style="font-weight:600; font-size:.95rem;">📄 Arjun_Patel_Resume.pdf</span>
+        <a href="resume/Arjun_Patel_Resume.pdf" download class="btn btn-primary" style="padding:8px 18px; font-size:.85rem;">⬇️ Download</a>
+      </div>
+      <iframe src="resume/Arjun_Patel_Resume.pdf#toolbar=1&navpanes=0" width="100%" height="800px" style="border:none; display:block; background:#525659;"></iframe>
+    </div>
+  </section>
+  <section id="footprint">
+    <div class="sec-title">
+      <h2>Your <em>Digital Footprint</em></h2>
+      <p>Everything this page learned about you — without you typing a single thing</p>
+    </div>
+    <div class="fp-banner">
+      <div><span class="big" id="fpCount">0</span>&nbsp;<span style="color:var(--muted)">data points collected so far —
+          all client-side, nothing leaves your browser.</span>
+        <div class="behave-bar" style="width:220px">
+          <div class="behave-fill" id="fpBar"></div>
+        </div>
+      </div>
+      <div class="fp-consent">
+        <button class="btn btn-ghost" id="fpPauseBtn">⏸️ Stop collecting</button>
+        <button class="btn btn-primary" id="fpExportBtn">⬇️ Export my data (JSON)</button>
+      </div>
+    </div>
+    <div class="fp-grid" id="fpGrid"></div>
+  </section>
+
+  <section id="contact">
+    <div class="sec-title">
+      <h2>Get In <em>Touch</em></h2>
+      <p>Hiring for a junior analyst role? Let's talk.</p>
+    </div>
+    <div class="contact-wrap">
+      <p style="color:var(--muted);line-height:1.8">I'm actively looking for my first data analyst role or internship.
+        Check out my work on GitHub &amp; Kaggle, connect with me on LinkedIn, or drop me an email — I reply fast ⚡</p>
+      <div class="contact-links">
+        <a class="btn btn-ghost" href="https://www.kaggle.com/" target="_blank" rel="noopener">🏆 Kaggle</a>
+        <a class="btn btn-ghost" href="https://github.com/" target="_blank" rel="noopener">🐙 GitHub</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/" target="_blank" rel="noopener">💼 LinkedIn</a>
+        <a class="btn btn-primary" href="mailto:corazon.data@gmail.com">✉️ Email Me</a>
+        <button class="btn btn-ghost" onclick="copyText('corazon.data@gmail.com')">📋 Copy Email</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Built with ❤️ &amp; lots of coffee · <span id="yearNow"></span> · Corazon<br>
+    <span style="font-size:.72rem;opacity:.7">Shortcuts: [T] theme · [Q] quote · [Esc] clear</span>
+  </footer>
+  <button id="toTop" title="Back to top">↑</button>
+  <div id="toastBox"></div>
+  <script src="js/main.js"></script>
+  <script src="js/footprint.js"></script>
+</body>
+
+</html>

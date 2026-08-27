@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects · Corazon — Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.proj-filter{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:34px}
+.pf-btn{background:var(--card);border:1px solid var(--border);color:var(--muted);padding:8px 18px;border-radius:10px;
+  cursor:pointer;font-weight:600;font-size:.82rem;font-family:inherit;transition:.2s}
+.pf-btn.active,.pf-btn:hover{border-color:var(--accent);color:var(--accent)}
+.proj-links{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.proj-link{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;font-size:.78rem;
+  font-weight:600;text-decoration:none;transition:.2s;border:1px solid var(--border);background:var(--card2);color:var(--text)}
+.proj-link:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.proj-link.github:hover{background:#24292e;color:#fff;border-color:#24292e}
+.proj-link.kaggle:hover{background:#20beff;color:#fff;border-color:#20beff}
+.proj-link.drive:hover{background:#4285f4;color:#fff;border-color:#4285f4}
+.proj-link.sample:hover{background:#34a853;color:#fff;border-color:#34a853}
+.proj-card .folder{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:12px;display:block}
+.detail-list{list-style:none;margin-top:10px}
+.detail-list li{color:var(--muted);font-size:.8rem;padding:3px 0 3px 20px;position:relative}
+.detail-list li::before{content:'▸';position:absolute;left:2px;color:var(--accent)}
+</style>
+</head>
+<body>
+<div id="progressBar"></div>
+<nav>
+  <div class="logo" onclick="location.href='../index.html'">&lt;/&gt; Corazon.Data</div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="#" class="active">Projects</a></li>
+    <li><a href="cheatsheets.html">Cheatsheets</a></li>
+    <li><a href="../index.html#footprint">Footprint</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-tools">
+    <button class="tool-btn" id="themeBtn" title="Toggle theme">🌙</button>
+    <button class="tool-btn" onclick="window.print()" title="Print">🖨️</button>
+  </div>
+</nav>
+
+<section style="padding-top:140px">
+  <div class="sec-title"><h2>My <em>Projects</em></h2><p>8 personal end-to-end analytics projects + Tableau dashboards — each with data cleaning, SQL, Python &amp; visuals</p></div>
+  <div class="proj-filter" id="projFilter">
+    <button class="pf-btn active" data-f="all">All (9)</button>
+    <button class="pf-btn" data-f="python">Python/Pandas</button>
+    <button class="pf-btn" data-f="sql">SQL</button>
+    <button class="pf-btn" data-f="viz">Tableau/Viz</button>
+  </div>
+  <div class="proj-grid" id="projGrid"></div>
+</section>
+
+<footer>Built with ❤️ · Corazon · <span id="yearNow"></span></footer>
+<div id="toastBox"></div>
+<script src="../js/theme-core.js"></script>
+<script src="../js/projects.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheatsheets Hub · Corazon</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div id="progressBar"></div>
+  <nav>
+    <div class="logo" onclick="location.href='../index.html'">&lt;/&gt; Corazon.Data</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="#" class="active">Cheatsheets</a></li>
+      <li><a href="../index.html#footprint">Footprint</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button class="tool-btn" id="themeBtn" title="Toggle theme">🌙</button>
+      <button class="tool-btn" onclick="window.print()" title="Print / Save as PDF">🖨️</button>
+    </div>
+  </nav>
+
+  <section id="cheatsheets" style="padding-top:140px">
+    <div class="sec-title">
+      <h2>Data Analyst <em>Cheatsheet Library</em></h2>
+      <p id="cheatStats">15 topics · quick reference cards · click copy to grab any snippet</p>
+    </div>
+    <div class="cheat-controls">
+      <input id="cheatSearch" type="text" placeholder='Search every topic… e.g. "window", "pivot", "bayes"'
+        autocomplete="off">
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <div id="panels"></div>
+
+    <div class="sec-title" style="margin-top:80px">
+      <h2>One-Stop <em>Cheatsheet Library</em></h2>
+      <p>Hand-picked external references · cheatsheets.zip & quickref.me</p>
+    </div>
+    <div class="cheat-grid" id="extLib"></div>
+    <p style="text-align:center;color:var(--muted);font-family:var(--mono);font-size:.78rem;margin-top:26px">
+      📄 Local PDFs: All Cheat Sheets Collection · Excelmerged · sqlmerged · Python-RegEx-Cheatsheet</p>
+
+    <p style="text-align:center;color:var(--muted);font-family:var(--mono);font-size:.78rem;margin-top:34px">💡 Tip:
+      press <b>/</b> to jump into search · <b>Esc</b> to clear · <b>T</b> toggles dark mode</p>
+  </section>
+
+  <footer>
+    Built with ❤️ · Corazon · <span id="yearNow"></span>
+  </footer>
+  <div id="toastBox"></div>
+  <script src="../js/theme-core.js"></script>
+  <script src="../js/cheatsheets.js"></script>
+  <script src="../js/cheat-render.js"></script>
+  <script src="../js/external-lib.js"></script>
+</body>
+
+</html>
